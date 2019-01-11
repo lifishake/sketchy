@@ -17,12 +17,14 @@ Text Domain: sketchy
 
 bg:#F7FCF8; 接近彩电灰屏的颜色
 text:#000200; 非常深的墨绿
+阴影、边框：#B2B7B3
+链接：#B7410E（rust）
+深背景：#EDEFED
 comment：#736B89；
 link:#000200;
-hover:#d5917f;
-social-hover:#d5917f;
+hover:#660000;
+social-hover:#660000;
 272947
-B2B7B3
 B7410E
 660000
 */
@@ -56,7 +58,6 @@ B7410E
 17.0 Customizer
 18.0 SVGs Fallbacks
 19.0 Media Queries
-20.0 Print
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -576,7 +577,7 @@ address {
 
 pre {
 	background: #e5e5e5;
-	font-family: "Courier 10 Pitch", Courier, monospace;/*放代码,所以使用等宽字体*/
+	font-family: "Courier 10 Pitch", Courier, monospace, NSimSun;/*放代码,所以使用等宽字体*/
 	font-size: 15px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
@@ -657,9 +658,9 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 textarea {
-	color: #1B1A1E;
-	background: rgba(247,252,248,.95);
-	border: 1px solid #b2b7b3;
+	color: #000200;
+	background: rgba(247,252,248,.95);/*F7FCF8*/
+	border: 1px solid #EDEFED;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	display: block;
@@ -712,7 +713,7 @@ input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus{
-	background-color: #d5917f;
+	background-color: #660000;
 }
 
 input + button,
@@ -811,8 +812,8 @@ td:last-child {
 --------------------------------------------------------------*/
 
 a {
-	/*color: #B7410E;*/
-    color: #660000;
+	color: #B7410E;
+    /*color: #660000;*/
 	text-decoration: none;
 }
 
@@ -1014,7 +1015,7 @@ a .nav-title,
 }
 
 .main-navigation a:hover {
-	color: #d5917f;
+	color: #660000;
   -webkit-box-shadow: none;
 	box-shadow: none;
 }
@@ -1403,7 +1404,7 @@ body.page .entry-title {
 .nav-links a.page-numbers:hover,
 .nav-links a.page-numbers:focus,
 .nav-links a.page-numbers:hover {
-	color: #d5917f;
+	color: #660000;
 }
 
 .page-numbers.current {
@@ -1448,7 +1449,7 @@ a.prev.page-numbers:hover {
 .prev.page-numbers:hover,
 .next.page-numbers:focus,
 .next.page-numbers:hover {
-	background-color: #d5917f; /* base: #767676; */
+	background-color: #660000; /* base: #767676; */
 	box-shadow: none;
 }
 
@@ -1636,7 +1637,7 @@ span.license-cc a:first-child {
 .entry-footer .edit-link a.post-edit-link:hover {
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	background-color: #d5917f;
+	background-color: #660000;
 }
 
 /* Post Navigation */
@@ -1669,7 +1670,7 @@ span.license-cc a:first-child {
 
 .post-navigation a:focus ,
 .post-navigation a:hover  {
-  color: #d5917f;
+  color: #660000;
 }
 /*
 .post-navigation a:focus .icon,
@@ -1758,7 +1759,7 @@ span.license-cc a:first-child {
 
 .social-navigation a:hover,
 .social-navigation a:focus {
-	background-color: #d5917f;
+	background-color: #660000;
 	-webkit-transition: background-color 0.2s ease-out;
 	-moz-transition: background-color 0.2s ease-out;
 	transition: background-color 0.2s ease-out;
@@ -1810,7 +1811,7 @@ span.license-cc a:first-child {
 }
 
 span.highlight {
-	background-color: #d5917f;
+	background-color: #660000;
 }
 
 /*红字警告，一般不会出现*/
@@ -2421,6 +2422,7 @@ object {
 	}
 }
 
+/*480*/
 @media screen and (min-width: 30em) {
 
 	/* Typography */
@@ -3015,7 +3017,7 @@ object {
 	}
 
 }
-/*更宽的屏*/
+/*更宽的屏 1072*/
 @media screen and ( min-width: 67em ) {
 
 	/* Layout */
@@ -3074,14 +3076,6 @@ object {
 
 	.blog .entry-content blockquote.alignright {
 		margin-right: -20%;
-	}
-}
-
-@media screen and ( max-width: 48.875em ) and ( min-width: 48em ) {
-
-	.admin-bar .site-navigation-fixed.navigation-top,
-	.admin-bar .site-navigation-hidden.navigation-top {
-		top: 46px;
 	}
 }
 
@@ -3167,7 +3161,7 @@ object {
 	.main-navigation li li.current-menu-item a:hover,
 	.main-navigation li li.current_page_item a:focus,
 	.main-navigation li li.current-menu-item a:focus {
-		color: #d5917f;
+		color: #660000;
 	}
 
 }
