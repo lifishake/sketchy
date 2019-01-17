@@ -829,8 +829,8 @@ a:focus {
 .site-footer .widget-area a,
 .sidebar-inline .widget-column a,
 .posts-navigation a {
-  -webkit-box-shadow: inset 0 -1px 0 #7b817f; /* Equivalant to #f0f0f0 */
-	box-shadow: inset 0 -1px 0 #7b817f; /* Equivalant to #f0f0f0 */
+  -webkit-box-shadow: inset 0 -1px 0 #B7410E; /* Equivalant to #f0f0f0 */
+	box-shadow: inset 0 -1px 0 #B7410E; /* Equivalant to #f0f0f0 */
 	-webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
@@ -850,10 +850,10 @@ a:focus {
 .sidebar-inline .widget-column a:active,
 .posts-navigation a:hover,
 .posts-navigation a:active {
-	color: #7b817f;
+	color: #660000;
 	outline: 0;
-  -webkit-box-shadow: inset 0 0 0 rgba(0, 2, 0, 0), 0 1px 0 rgba(0, 2, 0, 1);
-	box-shadow: inset 0 0 0 rgba(0, 2, 0, 0), 0 1px 0 rgba(0, 2, 0, 1);
+  -webkit-box-shadow: inset 0 0 0 rgba(102, 0, 0, 0), 0 1px 0 rgba(102, 0, 0, 1);
+	box-shadow: rgba(102, 0, 0, 0), 0 1px 0 rgba(102, 0, 0, 1);
 }
 
 
@@ -882,8 +882,8 @@ a .nav-title,
 	transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
-	-webkit-box-shadow: inset 0 -1px 0 rgba(10, 26, 31, 1); /* Equivalant to #10161f */
-	box-shadow: inset 0 -1px 0 rgba(10, 26, 31, 1); /* Equivalant to #10161f */
+	-webkit-box-shadow: inset 0 -1px 0 rgba(183, 65, 14, 1); /* Equivalant to #10161f */
+	box-shadow: inset 0 -1px 0 rgba(183, 65, 14, 1); /* Equivalant to #10161f */
 }
 
 /* Fixes linked images */
@@ -1151,13 +1151,8 @@ html {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 700px;
-	padding-left: 2em;
-	padding-right: 2em;
-    background-color:#F7FCF8;
-    border-top: 1px solid #EDEFED;
-    border-bottom: 1px solid #EDEFED;
-    border-left: 3px solid #EDEFED;
-    border-right: 3px solid #EDEFED;
+	/*padding-left: 2em;
+	padding-right: 2em;*/
 }
 
 .wrap:after {
@@ -1176,7 +1171,7 @@ html {
 
 .site-header {
 	position: relative;
-    background-color: #F7FCF8;
+    /*background-color: #F7FCF8;*/
 }
 
 /* Site branding */
@@ -1294,7 +1289,7 @@ html {
 }
 
 .site-content {
-	padding: 2.5em 0 0;
+	padding: 1.5em 0 0;
 }
 
 /*--------------------------------------------------------------
@@ -1353,6 +1348,7 @@ body.page .entry-title {
 	letter-spacing: 0.1818em;
 	padding-bottom: 0.25em;
 	text-transform: uppercase;
+    float:right;
 }
 
 .entry-meta,
@@ -1396,8 +1392,7 @@ body.page .entry-title {
 
 .nav-links a.page-numbers {
 	color: #b2b7b3;
-	box-shadow: #b2b7b3;
-	box-shadow: 0 -1px 0 rgb(108, 160, 220) inset;/*#736B89*/
+	box-shadow: none;
 }
 
 .nav-links a.page-numbers:focus,
@@ -1479,6 +1474,19 @@ a.prev.page-numbers:hover {
 	padding-bottom: 2em;
 }
 
+.archive .site-main .post,
+.search .site-main .post ,
+.single .site-main .post ,
+.blog .site-main .post {
+    background-color:#F7FCF8;
+    border-top: 1px solid #EDEFED;
+    border-bottom: 1px solid #EDEFED;
+    border-left: 3px solid #EDEFED;
+    border-right: 3px solid #EDEFED;
+    padding:15px 2em;
+    margin-bottom:15px;
+}
+
 body .entry-header {
 	padding: 1em 0 0.5em;
 }
@@ -1534,13 +1542,12 @@ body .entry-header {
 .archive.page-one-column #primary {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 740px;
 }
 
 /* Entry footer */
 
 .entry-footer {
-	border-bottom: 1px solid #b2b7b3;
+	border-bottom: 1px solid #95939B;
 	border-top: 1px solid #95939B;
 	margin-top: 2em;
 	padding: 2em 0;
@@ -2536,8 +2543,8 @@ object {
 
 	.wrap {
 		max-width: 1000px;
-		padding-left: 3em;
-		padding-right: 3em;
+		/*padding-left: 3em;
+		padding-right: 3em;*/
 	}
 
 	.error404 #primary {
@@ -2804,11 +2811,6 @@ object {
 	/* Front Page */
 
 	/* Posts */
-
-	.site-content {
-		padding: 3.5em 0 0;
-	}
-
 	.single-post .entry-title,
 	.page .entry-title {
 		font-size: 24px;
@@ -2911,12 +2913,6 @@ object {
 	}
 
 	/* Pages */
-
-	.page.page-one-column .entry-header,
-	.archive.page-one-column .page-header {
-		margin-bottom: 4em;
-	}
-
 	.page:not(.home) #content {
 		padding-bottom: 3.25em;
 	}
@@ -2925,12 +2921,6 @@ object {
 
 	.error404 .page-content {
 		padding-bottom: 9em;
-	}
-
-	/* Comments */
-
-	#comments {
-		padding-top: 5em;
 	}
 
 	.comments-title {
@@ -3134,12 +3124,12 @@ object {
 
 	.main-navigation li li:hover,
 	.main-navigation li li.focus {
-		background: #ffffff;
+		background: #F7FCF8;
 	}
 
 	.main-navigation ul ul {
 		border-color: #b2b7b3;
-		background: #FFFFFF;
+		background: #F7FCF8;
 	}
 
 	.main-navigation ul li.menu-item-has-children:before,

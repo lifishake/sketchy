@@ -355,3 +355,21 @@ function the_sketchy_excerpt(){
     $return = mb_ereg_replace($keyword, '<span class="highlight">'.$keyword.'</span>', $return);
     echo $return;
 }
+
+function sketchy_term_icon() {
+    if ( in_category('nightlygames' ) ){
+        //每夜一游
+    }
+    else if (in_category('read_gulong_once_more')||in_category('morden_legends')){
+
+    }
+    else if (in_category('relisten_moring_songs')){
+
+    }
+    else if (in_category('appreciations')){
+        //特别企划
+    }
+    else if (in_category('appreciations')){
+        //特别企划
+    }
+}
