@@ -9,8 +9,7 @@
  */
 
 ?>
-<div class="site-branding">
-	<div class="wrap">
+<div class="site-branding wrap">
 
 		<?php the_custom_logo(); ?>
 
@@ -27,5 +26,4 @@
 				<?php endif; ?>
 		</div><!-- .site-branding-text -->
 
-	</div><!-- .wrap -->
 </div><!-- .site-branding -->
