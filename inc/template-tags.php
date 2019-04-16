@@ -264,6 +264,11 @@ function sketchy_entry_meta(){
   }
 }
 
+function sketchy_the_title()
+{
+
+}
+
 /**
  * 作用: 显示文章脚信息。(屏幕输出)
  * 来源: 破袜子原创
@@ -272,7 +277,7 @@ function sketchy_entry_footer() {
 
   $tags_list = get_the_tag_list( '', ', ' );
 
-  if ( ( $categories_list || $tags_list ) || get_edit_post_link() ) {
+  if ( $tags_list || get_edit_post_link() ) {
 
   echo '<footer class="entry-footer">';
   if ( 'post' === get_post_type() ) {
@@ -354,22 +359,4 @@ function the_sketchy_excerpt(){
     }
     $return = mb_ereg_replace($keyword, '<span class="highlight">'.$keyword.'</span>', $return);
     echo $return;
-}
-
-function sketchy_term_icon() {
-    if ( in_category('nightlygames' ) ){
-        //每夜一游
-    }
-    else if (in_category('read_gulong_once_more')||in_category('morden_legends')){
-
-    }
-    else if (in_category('relisten_moring_songs')){
-
-    }
-    else if (in_category('appreciations')){
-        //特别企划
-    }
-    else if (in_category('appreciations')){
-        //特别企划
-    }
 }

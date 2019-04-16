@@ -31,13 +31,14 @@ add_filter( 'body_class', 'sketchy_body_classes' );
 
 function sketchy_get_thumbnail_str() {
     if ( !is_singular() )
-        return '';
+		return '';
+	$thumbnail = "";
     if ( has_post_thumbnail() ) :
-        $post_image_id = get_post_thumbnail_id($post_to_use->ID);
+        $post_image_id = get_post_thumbnail_id();
         if ($post_image_id) 
         {
-            $thumbnail = wp_get_attachment_image_src( $post_image_id, 'sketchy-featured-image'/*sketchy-featured-image*/, false);
-            if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+            $thumbnails = wp_get_attachment_image_src( $post_image_id, 'sketchy-featured-image'/*sketchy-featured-image*/, false);
+            if ($thumbnails) (string)$thumbnail = $thumbnails[0];
 		}
 	endif;
     return $thumbnail;

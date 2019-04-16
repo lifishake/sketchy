@@ -876,7 +876,7 @@ a .nav-title,
 .widget .widget-title a,
 .widget ul li a,
 .site-footer .widget-area ul li a,
-.sidebar-inline .widget-column ul li a, {
+.sidebar-inline .widget-column ul li a {
 	text-decoration: none;
 	-webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
@@ -903,11 +903,13 @@ a .nav-title,
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
-     background: rgba(0,0,0,0) url(./assets/images/header.jpg) no-repeat center right ;
+	background-color:rgba(247, 252, 248,.95);
+    /* background: rgba(0,0,0,0) url(./assets/images/header.jpg) no-repeat center right ;*/
      background-size: cover;
 }
 .navigation-top .site-navigation-fixed{
-    background: rgba(0,0,0,0) url(./assets/images/header.jpg) no-repeat center right ;
+	background-color:rgba(247, 252, 248,.95);
+    /*background: rgba(0,0,0,0) url(./assets/images/header.jpg) no-repeat center right ;*/
 }
 
 .navigation-top .wrap {
@@ -1177,7 +1179,7 @@ html {
 /* Site branding */
 
 .site-branding {
-	padding: 1em 0;
+	padding: 1em;
 	position: relative;
 	z-index: 3;
 }
@@ -1196,6 +1198,19 @@ html {
 .site-branding .wrap{
     padding-left: 1em;
     border:none;
+}
+
+.site-branding::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 101%;
+    top: 0;
+    left: 0;
+	pointer-events: none;
+    background: -webkit-linear-gradient(top, rgba(247, 252, 248,0.75) 0%, rgba(247, 252, 248,1) 100%);
+	background: linear-gradient(to bottom, rgba(247, 252, 248,0.75) 0%, rgba(247, 252, 248,1) 100%);
+	z-index:-1;
 }
 
 .site-title {
@@ -1271,7 +1286,7 @@ html {
 	position: relative;
 }
 
-.site-content-contain::after{
+.site::after{
     content: "";
     position: absolute;
     width: 100%;
@@ -1280,9 +1295,9 @@ html {
     left: 0;
     z-index: -1;
     color:#EDEFED;
-    -webkit-mask-image:url(./assets/images/bg.svg);
+	-webkit-mask-image:url(./assets/images/background.png);
     -webkit-mask-repeat: repeat repeat;
-    mask-image: url(./assets/images/bg.svg)  ;
+	mask-image: url(./assets/images/background.png)  ;
     mask-repeat: repeat repeat;
     background-color: #EDEFED;
     margin:16px;
@@ -1478,13 +1493,12 @@ a.prev.page-numbers:hover {
 .search .site-main .post ,
 .single .site-main .post ,
 .blog .site-main .post {
-    background-color:#F7FCF8;
-    border-top: 1px solid #EDEFED;
-    border-bottom: 1px solid #EDEFED;
-    border-left: 3px solid #EDEFED;
-    border-right: 3px solid #EDEFED;
+	background-color:#F7FCF8;
+	box-shadow: 0 0 15px #EDEFED;
+    border: 1px solid #EDEFED;
     padding:15px 2em;
-    margin-bottom:15px;
+	margin-bottom:15px;
+	border-radius: 5px;
 }
 
 body .entry-header {
@@ -1840,6 +1854,15 @@ span.warnning {
 #comments {
 	clear: both;
 	padding: 2em 0 0.5em;
+}
+
+.comment-form {
+	background-color:#F7FCF8;
+	box-shadow: 0 0 15px #EDEFED;
+    border: 1px solid #EDEFED;
+    padding:15px 2em;
+	margin-bottom:15px;
+	border-radius: 5px;
 }
 
 .comments-title {
@@ -2493,7 +2516,7 @@ object {
 	/* Site Branding */
 
 	.site-branding {
-		padding: 2em 0;
+		padding: 2em;
 	}
 
 	/* Blog Index, Archive, Search */
