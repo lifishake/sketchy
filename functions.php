@@ -144,7 +144,30 @@ function sketchy_scripts() {
 		background: url(\"".$thumbnail_src." \") no-repeat center right ;
 		background-size: cover;
 	}";
-
+	if ( has_post_thumbnail() && is_singular() ) {
+		$picid = get_post_thumbnail_id();
+		$maincolor = get_post_meta($picid, "apip_main_color", true);
+		if ( $maincolor ) {
+			$newbg = sketchy_background_color($maincolor);
+			$newmask = sketchy_mask_color($maincolor);
+			$css .= ".site-branding { box-shadow: 0 -8px 8px ".$maincolor.";border-left: 1px solid ".$maincolor.";border-right: 1px solid ".$maincolor.";}";
+			$css .= ".navigation-top { box-shadow: 0 8px 8px ".$maincolor.";border-left: 1px solid ".$maincolor.";border-right: 1px solid ".$maincolor.";border-bottom: 1px solid ".$maincolor.";}";
+			$css .= "#comments { box-shadow: 0 0 8px ".$maincolor.";border: 1px solid ".$maincolor.";}";
+			$css .= ".comment-reply-link:hover { background-color: ".$newmask."; }";
+			$css .="li.bypostauthor > article > footer > div.comment-metadata > b.author-url, li.bypostauthor > article > footer > div.comment-metadata > b.author-url a { color: ".$maincolor."; }";
+			$css .= "span.mention{ color: ".$maincolor."; }";
+			$css .= ".site-footer,ol.comment-list li:hover, ol.comment-list li:focus { border-color: ".$maincolor."; }";
+			$css .= ".site::after{ background-color: ".$newmask.";}";
+			if (is_single())
+			{
+				$css .= ".single .site-main .post, .blog .site-main .post{ box-shadow: 0 0 8px ".$maincolor.";border: 1px solid ".$maincolor.";}";
+				$css .= ".sidebar-inline { border-color: ".$maincolor."; }";
+			}
+			else {
+				$css .= ".navigation-top .current_page_item > a {text-shadow: 1px 1px 2px ".$maincolor.";}";
+			}			
+		}
+	}
 	wp_add_inline_style('sketchy-style', $css);
 }
 add_action( 'wp_enqueue_scripts', 'sketchy_scripts' );
@@ -183,6 +206,143 @@ function sketchy_header_image_tag( $html, $header, $attr ) {
 	return $html;
 }
 add_filter( 'get_header_image_tag', 'sketchy_header_image_tag', 10, 3 );
+
+function sketchy_background_color($refcolor) {
+	$rgbref = hex2rgb($refcolor);
+	$hsvref = rgb2hsv($rgbref);
+	$hsvref[1] = 16;
+	$hsvref[2] = 98;
+	$rgb = hsv2rgb($hsvref) ;
+	$str = sprintf("#%1$02X%2$02X%3$02X",$rgb[0],$rgb[1],$rgb[2]) ;
+	return $str;
+}
+
+function sketchy_mask_color($refcolor) {
+	$rgbref = hex2rgb($refcolor);
+	$hsvref = rgb2hsv($rgbref);
+	$hsvref[1] = 16;
+	$hsvref[2] = 93;
+	$rgb = hsv2rgb($hsvref) ;
+	$str = sprintf("#%1$02X%2$02X%3$02X",$rgb[0],$rgb[1],$rgb[2]) ;
+	return $str;
+}
+
+/**
+ * 作用: HEX描述的颜色值转成RGBA描述(A作为另外的参数)
+ * 来源: Oblique原版
+ */
+function hex2rgba_str($color, $opacity = 1.0) {
+
+	if ($color[0] == '#' ) {
+		$color = substr( $color, 1 );
+	}
+	$hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+	$rgb =  array_map('hexdec', $hex);
+	$output = 'rgba('.implode(",",$rgb).','.$opacity.')';
+
+	return $output;
+}
+
+/**
+* 作用: HEX描述的颜色值转成RGB
+* 来源: Oblique原版
+*/
+if (!function_exists('hex2rgb'))
+{
+function hex2rgb($color) {
+	if ($color[0] == '#' ) {
+		$color = substr( $color, 1 );
+	}
+	$hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+	$rgb =  array_map('hexdec', $hex);
+	return $rgb;
+}
+}
+
+
+/**
+* 作用: RGB颜色值转成HSV描述
+* 来源: http://stackoverflow.com/questions/1773698/rgb-to-hsv-in-php
+* 输出的范围0-360, 0-100, 0-100!!
+*/
+if (!function_exists('rgb2hsv'))
+{
+function rgb2hsv(array $rgb)   
+{                             
+	list($R,$G,$B) = $rgb;
+	$R = ($R / 255);
+	$G = ($G / 255);
+	$B = ($B / 255);
+
+	$maxRGB = max($R, $G, $B);
+	$minRGB = min($R, $G, $B);
+	$chroma = $maxRGB - $minRGB;
+
+	$computedV = floor(100 * $maxRGB);
+
+	if ($chroma == 0)
+		return array(0, 0, $computedV);
+
+	$computedS = floor(100 * ($chroma / $maxRGB));
+
+	if ($R == $minRGB)
+		$h = 3 - (($G - $B) / $chroma);
+	elseif ($B == $minRGB)
+		$h = 1 - (($R - $G) / $chroma);
+	else // $G == $minRGB
+		$h = 5 - (($B - $R) / $chroma);
+
+	$computedH = floor(60 * $h);
+
+	return array($computedH, $computedS, $computedV);
+}
+}
+/**
+* 作用: RGB颜色值转成HSV描述
+* 来源: 破袜子由C代码修改
+* 输入的范围0-360, 0-100, 0-100!!
+*/
+if (!function_exists('hsv2rgb'))
+{
+function hsv2rgb(array $hsv) {
+	list($H,$S,$V) = $hsv;
+	//1
+	$H /= 60;
+	//2
+	$I = floor($H);
+	$F = $H - $I;
+	$S /= 100;
+	$V /= 100;
+	//3
+	$M = round( $V * (1 - $S) * 255);
+	$N = round( $V * (1 - $S * $F) * 255 );
+	$K = round( $V * (1 - $S * (1 - $F)) * 255 );
+	$V = round( $V * 255) ;
+	//4
+	switch ($I) {
+		case 0:
+			list($R,$G,$B) = array($V,$K,$M);
+			break;
+		case 1:
+			list($R,$G,$B) = array($N,$V,$M);
+			break;
+		case 2:
+			list($R,$G,$B) = array($M,$V,$K);
+			break;
+		case 3:
+			list($R,$G,$B) = array($M,$N,$V);
+			break;
+		case 4:
+			list($R,$G,$B) = array($K,$M,$V);
+			break;
+		case 5:
+		case 6: //for when $H=1 is given
+			list($R,$G,$B) = array($V,$M,$N);
+			break;
+	}
+	return array($R, $G, $B);
+}
+}
 
 /**
  * Implement the Custom Header feature.

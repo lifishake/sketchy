@@ -31,5 +31,6 @@
 	</header><!-- .entry-header -->
     <div class="entry-content">
 		<?php the_excerpt(); ?>
+		<span class="grid-fade"></span>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

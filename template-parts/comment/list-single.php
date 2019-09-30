@@ -25,31 +25,40 @@ if ( post_password_required() ) {
 
 <?php
 function sketchy_single_comment( $comment, $args, $depth ) {
+    $comment_author_url = $comment->comment_author_url;
+    $avatar_img = get_avatar( $comment, $args['avatar_size'] );
+    $comment_author_name = $comment->comment_author;
+    $parent_comment_id = $comment->comment_parent ;
 ?>
         <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
             <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
                 <footer class="comment-meta">
                     <div class="comment-author vcard">
-                        <?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
+                        <?php if ($comment_author_url) {
+                                printf('<a class="url" href="%1$s" target="_blank" rel="external nofollow" title="%2$s">%3$s</a>', $comment_author_url, $comment_author_name, $avatar_img);
+                            } else {
+                                echo $avatar_img;
+                            }
+                        ?>
                     </div><!-- .comment-author -->
 
                     <div class="comment-metadata">
-                        <?php
-                            /* translators: %s: comment author link */
+                        <?php 
+                        if (''===$comment_author_url || $parent_comment_id > 0) {
                             printf( '<b class="fn author-url">%s</b>', get_comment_author_link( $comment ) );
+                        }
+                        if ( $parent_comment_id > 0 ) {
+                            printf( '<span class="mention"> @%1s </span>', get_comment_author($parent_comment_id) );
+                        }
                         ?>
                         <time datetime="<?php comment_time( 'c' ); ?>">
                             <?php echo sketchy_rel_comment_date(); ?>
-                        </time>
-                        <?php $parent_comment_id = $comment->comment_parent ;
-                          if ( $parent_comment_id > 0 ) {
-                            printf( '<span class="mention"> @%1s </span>', get_comment_author($parent_comment_id) );
-                        }
+                        </time><?php
                         comment_reply_link( array_merge( $args, array(
                             'add_below' => 'div-comment',
                             'depth'     => $depth,
                             'max_depth' => $args['max_depth'],
-                            'reply_text'=> '回复',
+                            'reply_text'=> '@TA',
                             'before'    => '<span class="reply">',
                             'after'     => '</span>'
                         ) ) );

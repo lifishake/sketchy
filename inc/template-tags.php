@@ -184,10 +184,10 @@ function sketchy_timediff( $from, $to, $before, $after) {
  */
 function sketchy_rel_post_date() {
   global $post;
-  $post_date_time = mysql2date('j-n-Y H:i:s', $post->post_date, false);
+  $post_date_time = get_post_time( 'U', false, $post );
   $current_time = current_time('timestamp');
-  $date_today_time = gmdate('j-n-Y H:i:s', $current_time);
-  return sketchy_timediff( $post_date_time, $date_today_time ,'&nbsp;','前' ) ;
+  $timediff = human_time_diff( $post_date_time, $current_time );
+  return " ". $timediff . "前";
 }
 
 /**
@@ -197,9 +197,10 @@ function sketchy_rel_post_date() {
  */
 function sketchy_rel_comment_date() {
   global $post , $comment;
-  $post_date_time = mysql2date('j-n-Y H:i:s', $post->post_date, false);
-  $comment_date_time = mysql2date('j-n-Y H:i:s', $comment->comment_date, false);
-  return sketchy_timediff( $post_date_time, $comment_date_time ,'&nbsp;','后' ) ;
+  $post_date_time = get_post_time('U');
+  $comment_date_time = get_comment_time('U');
+  $timediff = human_time_diff( $post_date_time, $comment_date_time );
+  return "发文 " . $timediff . " 后";
 }
 
 /**

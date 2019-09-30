@@ -38,7 +38,7 @@
     <p class="comment-form-url"><input id="url" name="url" type="url"  size="30" placeholder="网址（选填）" value="<?php echo esc_attr($url); ?>" maxlength="200" /></p>
     </div>
 <?php endif; ?>
-<p class="comment-form-comment" <?php if ($form_style) { echo $form_style; } ?> ><textarea id="comment" name="comment" cols="45" rows="8" placeholder="<?php echo apply_filters('apip_placeholder_text','请不要留下无趣的东西浪费大家时间。');/*配合apip插件!*/?>" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="form-submit">
+<p class="comment-form-comment" ><textarea id="comment" name="comment" cols="45" rows="8" placeholder="<?php echo apply_filters('apip_placeholder_text','请不要留下无趣的东西浪费大家时间。');/*配合apip插件!*/?>" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="form-submit">
 <input name="submit" type="submit" id="reload" class="submit" value="提交留言" wpnonce="<?php echo wp_create_nonce('no-comment-is-best-comment'); ?>" />
 <input type='hidden' name='comment_post_ID' value='<?php echo esc_attr($post->ID); ?>' id='comment_post_ID' />
 <input type='hidden' name='comment_parent' id='comment_parent' value='0' />

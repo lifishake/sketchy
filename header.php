@@ -31,10 +31,8 @@
 
 		<?php if ( has_nav_menu( 'top' ) ) :
             ?>
-			<div class="navigation-top" >
-    				<div class="wrap">
-    					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-    				</div><!-- .wrap -->
+			<div class="navigation-top wrap" >
+    				<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 			</div><!-- .navigation-top -->
 		<?php endif; ?>
 

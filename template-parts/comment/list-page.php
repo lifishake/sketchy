@@ -19,6 +19,7 @@ if ( post_password_required() ) {
             'type'=>'comment',
             'reverse_top_level'=>true,
             'max_depth'=>2,
+            'reply_text'=> '@TA',
             'callback'=>'sketchy_page_comment',
         );
         wp_list_comments( $arg_list );

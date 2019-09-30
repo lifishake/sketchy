@@ -45,7 +45,8 @@
 
 	// Make navigation 'stick'.
 	function adjustScrollClass() {
-
+		//todo
+		return;
 		if ( $( window ).scrollTop() >= $('#content').offset().top ) {
 			$navigation.addClass( navigationFixedClass );
 			if ( isFrontPage ) {
