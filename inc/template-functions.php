@@ -25,6 +25,12 @@ function sketchy_body_classes( $classes ) {
 			$classes[] = 'page-one-column';
 	}
 
+	if (!is_single()) {
+		return $classes;
+	}
+	$dices = 13;
+	$id = get_the_ID()%$dices;
+	$classes[] = "bgnum-".$id;
 	return $classes;
 }
 add_filter( 'body_class', 'sketchy_body_classes' );

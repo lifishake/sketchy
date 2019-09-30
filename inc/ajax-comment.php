@@ -17,109 +17,105 @@ add_action('wp_ajax_ajax_comment', 'ajax_comment_callback');
  * 来源: 破袜子根据大发的代码修改
  */
 function sketchy_newcomment( ) {
-	global $wpdb;
-    $comment_post_ID = isset($_POST['comment_post_ID']) ? (int) $_POST['comment_post_ID'] : 0;
-    $post = get_post($comment_post_ID);
-    if ( empty($post->comment_status) ) {
-        do_action('comment_id_not_found', $comment_post_ID);
-        ajax_comment_err('评论状态不正确');
-    }
-    $status = get_post_status($post);
-    $status_obj = get_post_status_object($status);
-    if ( !comments_open($comment_post_ID) ) {
-        do_action('comment_closed', $comment_post_ID);
-        ajax_comment_err('评论已关闭');
-    } elseif ( 'trash' == $status ) {
-        do_action('comment_on_trash', $comment_post_ID);
-        ajax_comment_err('评论状态不正确');
-    } elseif ( !$status_obj->public && !$status_obj->private ) {
-        do_action('comment_on_draft', $comment_post_ID);
-        ajax_comment_err('评论状态不正确');
-    } elseif ( post_password_required($comment_post_ID) ) {
-        do_action('comment_on_password_protected', $comment_post_ID);
-        ajax_comment_err('密码保护中');
-    } else {
-        do_action('pre_comment_on_post', $comment_post_ID);
-    }
-    $comment_author       = ( isset($_POST['author']) )  ? trim(strip_tags($_POST['author'])) : null;
-    $comment_author_email = ( isset($_POST['email']) )   ? trim($_POST['email']) : null;
-    $comment_author_url   = ( isset($_POST['url']) )     ? trim($_POST['url']) : null;
-	$comment_content      = ( isset($_POST['comment']) ) ? trim($_POST['comment']) : null;
-	$comment_type = '';
-
-    $user = wp_get_current_user();
-    if ( $user->exists() ) {
-        if ( empty( $user->display_name ) )
-            $user->display_name=$user->user_login;
-        $comment_author       = esc_sql($user->display_name);
-        $comment_author_email = esc_sql($user->user_email);
-        $comment_author_url   = esc_sql($user->user_url);
-        $user_ID              = esc_sql($user->ID);
-    } else {
-        if ( get_option('comment_registration') || 'private' == $status )
-            ajax_comment_err('对不起，只有登录用户才能评论。');
-    }
-
-    if ( get_option('require_name_email') && !$user->exists() ) {
-        if ( 6 > strlen($comment_author_email) || '' == $comment_author )
-            ajax_comment_err( '错误：请填写昵称和邮件地址。' );
-        elseif ( !is_email($comment_author_email))
-            ajax_comment_err( '错误：邮件格式不正确。' );
-    }
-    if ( '' == $comment_content )
-        ajax_comment_err( '错误：请输入您的评论内容。' );
-    $dupe = "SELECT comment_ID FROM $wpdb->comments WHERE comment_post_ID = '$comment_post_ID' AND ( comment_author = '$comment_author' ";
-    if ( $comment_author_email ) $dupe .= "OR comment_author_email = '$comment_author_email' ";
-    $dupe .= ") AND comment_content = '$comment_content' LIMIT 1";
-    if ( $wpdb->get_var($dupe) ) {
-        ajax_comment_err('请不要重复评论！');
-    }
-    if ( $lasttime = $wpdb->get_var( $wpdb->prepare("SELECT comment_date_gmt FROM $wpdb->comments WHERE comment_author = %s ORDER BY comment_date DESC LIMIT 1", $comment_author) ) ) {
-        $time_lastcomment = mysql2date('U', $lasttime, false);
-        $time_newcomment  = mysql2date('U', current_time('mysql', 1), false);
-        $flood_die = apply_filters('comment_flood_filter', false, $time_lastcomment, $time_newcomment);
-        if ( $flood_die ) {
-            ajax_comment_err('评论太频繁了，请稍后再按。');
-        }
-    }
-
-    $comment_parent = isset($_POST['comment_parent'])  ? absint($_POST['comment_parent']) : 0;
-    $commentdata = compact('comment_post_ID', 'comment_author', 'comment_author_email', 'comment_author_url', 'comment_content', 'comment_type', 'comment_parent', 'user_ID');
-
-    $comment_id = wp_new_comment( $commentdata );
-
-
-    $comment = get_comment($comment_id);
-    do_action('set_comment_cookies', $comment, $user);
-
+    $comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
+    if ( is_wp_error( $comment ) ) {
+        $code = $comment->get_error_code();
+        $err_str = "异常评论";
+        if ( ! empty( $code ) ) {
+            switch($code) {
+                case 'comment_id_not_found':
+                $err_str = "评论不存在!";
+                break;
+                case 'comment_closed':
+                $err_str = "评论已关闭!";
+                break;
+                case 'comment_on_trash':
+                $err_str = "评论已被移至垃圾箱!";
+                break;
+                case 'comment_on_draft':
+                $err_str = "该文章无权限评论!";
+                break;
+                case 'comment_on_password_protected':
+                $err_str = "该文章已被保护!";
+                break;
+                case 'not_logged_in':
+                $err_str = "对不起，评论前需登录!";
+                break;
+                case 'comment_author_column_length':
+                $err_str = "提交失败，昵称超长!";
+                break;
+                case 'comment_author_email_column_length':
+                $err_str = "提交失败，邮箱超长!";
+                break;
+                case 'comment_author_url_column_length':
+                $err_str = "提交失败，网址超长!";
+                break;
+                case 'comment_content_column_length':
+                $err_str = "提交失败，评论内容超长!";
+                break;
+                case 'require_name_email':
+                $err_str = "对不起，昵称和邮箱不可为空!";
+                break;
+                case 'require_valid_email':
+                $err_str = "请输入正确的邮箱格式!";
+                break;
+                case 'require_valid_comment':
+                $err_str = "对不起，评论内容不可为空!";
+                break;
+                case 'comment_save_error':
+                $err_str = "异常，评论保存失败!";
+                break;
+                case 'comment_flood':
+                $err_str = "评论太频繁了，慢一点老铁!";
+                break;
+                case 'comment_duplicate':
+                $err_str = "检测到重复评论!";
+                break;
+                default:
+                break;
+            }
+        } 
+        ajax_comment_err($err_str);
+        exit;
+    } 
     $GLOBALS['comment'] = $comment;
-	//追加了一个email作为返回值。方便回调函数顺利取到头像。
-	return $comment_author_email;
+	return $comment;
 }
 
 /**
  * 作用: 留言的回调显示
  * 来源: 破袜子原创
  */
-function sketchy_additional_comment_show( $email ) {
+function sketchy_additional_comment_show( $comment ) {
+    $success = 0;
+    if ( '0' == $comment->comment_approved )
+    {
+        ajax_comment_err("评论审核中...");
+        exit();
+    }
+    if ($comment->comment_author_email == "2b@pewae.com")
+    {
+        $success = 10;
+    }
 	?>
     <li <?php comment_class(); ?>>
         <article class="comment-body">
             <footer class="comment-meta">
                 <div class="comment-author vcard">
-                    <?php echo get_avatar( $email, $size = '100')?>
+                    <?php echo get_avatar( $comment->comment_author_email, $size = '100')?>
                 </div>
                 <div class="comment-metadata">
                     <span><b class="fn author-url"><?php echo get_comment_author_link(); ?></b>
 					</span>
                     <time datetime="<?php comment_time( 'c' ); ?>">刚刚</time>
                 </div>
-				<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php echo '评论审核中。'; ?></p>
-				<?php endif; ?>
             </footer>
-            <div class="comment-content <?php echo $vcard_class;?>">
-                <?php comment_text(); ?>
+            <div class="comment-content">
+                <?php comment_text(); 
+                if ($success===10) {
+                    echo("</br><p><em><b>博主看你发广告太辛苦，替你换了个昵称。</br>惊不惊喜，意不意外？</b></em></p>");
+                }
+                ?>
             </div>
         </article>
     </li>
