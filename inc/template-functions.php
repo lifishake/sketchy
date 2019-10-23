@@ -111,7 +111,7 @@ function  sketchy_add_single_inline_css() {
 	}
 
 	if (function_exists('apip_get_related_posts') && function_exists('apip_get_sameday_his_posts')){
-		$sameday = apip_get_sameday_his_posts(5,"NEARBY");
+		$sameday = apip_get_sameday_his_posts(3,"NEARBY");
 		$exclude = array_column($sameday, "object_id");
 		$related = apip_get_related_posts(6 - count($exclude),$exclude);
 		$g_related = $related;
