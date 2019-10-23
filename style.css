@@ -1486,8 +1486,9 @@ body.page .entry-title {
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: 700;
-	padding: 2em 0 3em;
+	padding: 1em 0 3em;
 	text-align: center;
+	 margin-top:1em;
 }
 
 .pagination .icon,
@@ -1535,7 +1536,7 @@ body.page .entry-title {
 	font-size: 24px;
 	font-size: 1.5rem;
 	line-height: 1;
-	padding: 0.25em 0.5em 0.4em;
+	padding: 0.25em 0.5em 0.25em;
 	background-color: #b2b7b3;
 	color: #FFFFFF;
 	box-shadow: none;
