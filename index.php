@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  * @version 1.0
  */
@@ -37,9 +37,10 @@ get_header(); ?>
 				endwhile;
 
 				the_posts_pagination( array(
-					'prev_text' => sketchy_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">上一页</span>',
-					'next_text' => '<span class="screen-reader-text">下一页</span>' . sketchy_get_svg( array( 'icon' => 'arrow-right' ) ),
+					'prev_text' => '&larr;<span class="screen-reader-text">上一页</span>',
+					'next_text' => '<span class="screen-reader-text">下一页</span>&rarr;',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">页</span>',
+					'mid_size' => 5,
 				) );
 				/*the_posts_navigation();*/
 

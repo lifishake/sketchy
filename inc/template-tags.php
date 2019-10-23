@@ -3,7 +3,7 @@
  * 自定义模板功能
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  */
 
@@ -281,10 +281,7 @@ function sketchy_entry_footer() {
   if ( $tags_list || get_edit_post_link() ) {
 
   echo '<footer class="entry-footer">';
-  if ( 'post' === get_post_type() ) {
-  if ( is_single() && (!(has_tag('zhuanzai') || has_category('zhaichaohedaolian'))) ) {
-  get_template_part( 'meta', 'license' );
-  }
+
   echo '<span class="cat-tags-links">';
   //日期
   echo '<span class="date-links">' . sketchy_get_svg( array( 'icon' => 'calendar' ) ) . sketchy_get_dates_trace() . '</span>';
@@ -297,16 +294,19 @@ function sketchy_entry_footer() {
   //发帖时天气
   if( function_exists('apip_get_heweather') )  {
       $heweather = apip_get_heweather();
-      if ( '' !== $heweather ) {
+      if ( '' !== $heweather && 'NONE' !== $heweather && 'INVALID' !== $heweather ) {
           echo '<span class="weather-links">'.$heweather. '</span>';
       }
   }
-
+  sketchy_edit_link();
   echo '</span>';
   }
 
-  sketchy_edit_link();
-
+  
+  if ( 'post' === get_post_type() ) {
+    if ( is_single() && (!(has_tag('zhuanzai') || has_category('zhaichaohedaolian'))) ) {
+    get_template_part( 'template-parts/post/meta', 'license' );
+    }
   echo '</footer> <!-- .entry-footer -->';
   }
 }

@@ -3,7 +3,7 @@
  * 显示已注册的页脚小工具
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  * @version 1.0
  */

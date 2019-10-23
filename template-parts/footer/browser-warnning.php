@@ -3,7 +3,7 @@
  * 显示不支持的浏览器警告
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  * @version 1.0
  */

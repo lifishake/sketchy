@@ -3,7 +3,7 @@
  * Displays top navigation
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  * @version 1.0
  */
@@ -15,8 +15,5 @@
 		'theme_location' => 'top',
 		'menu_id'        => 'top-menu',
 	) ); ?>
-
-
-		<a href="" rel="tohead" class="menu-scroll-up"><?php echo sketchy_get_svg( array( 'icon' => 'square-up' ) ); ?><span class="screen-reader-text"><?php echo( '回到顶部' ); ?></span></a>
 
 </nav><!-- #site-navigation -->
