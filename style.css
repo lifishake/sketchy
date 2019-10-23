@@ -1595,7 +1595,7 @@ a.prev.page-numbers:hover {
 	box-shadow: 0 0 8px #EDEFED;
     border: 1px solid #EDEFED;
     padding:15px 2em;
-	margin:15px 3px 0 3px;
+	margin:15px 0 0 0;
 	border-radius: 5px;
 }
 
@@ -1610,7 +1610,7 @@ body .entry-content{
 }
 
 body #comments {
-	margin:1em 3px;
+	margin:1em 0;
 }
 
 body .entry-header {
@@ -3254,4 +3254,11 @@ object {
 		color: #B7410E;
 	}
 
+}
+
+@media screen and (max-width: 1010px) {
+	.wrap {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
 }
