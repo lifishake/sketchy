@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Custom_Headers
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  */
 

@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  * @version 1.0
  */

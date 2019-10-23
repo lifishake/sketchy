@@ -3,7 +3,7 @@
  * Twenty Seventeen: Customizer
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  */
 

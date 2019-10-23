@@ -3,7 +3,7 @@
  * SVG icons related functions and filters
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  */
 

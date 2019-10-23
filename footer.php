@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  * @version 1.0
  */
@@ -38,6 +38,7 @@
 				get_template_part( 'template-parts/footer/site', 'info' );
 				get_template_part( 'template-parts/footer/browser', 'warnning' );
 				?>
+				<div class="scroll-to-top"><?php echo sketchy_get_svg( array( 'icon' => 'totop' ) ); ?><span class="screen-reader-text"><?php echo( '回到顶部' ); ?></span></div>
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->

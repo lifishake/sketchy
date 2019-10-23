@@ -26,6 +26,7 @@ function sketchy_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'sketchy-featured-image', 800, 480, true );
+	add_image_size( 'sketchy-related', 500, 80, true );
 
 	register_nav_menus( array(
 		'top'    => 'Top Menu',
@@ -133,7 +134,7 @@ function sketchy_scripts() {
 		wp_localize_script( 'sketchy-ajax-comment', 'ajaxcomment', array( 'ajax_url'   => admin_url('admin-ajax.php')));
 	}
 
-	$css = '.site-navigation-fixed.navigation-top:before {	content: \''. get_bloginfo('name') .'\'; }';
+	$css = '';
     $thumbnail_src = sketchy_get_thumbnail_str();
     $header_src = get_theme_file_uri( 'assets/images/header.jpg' );
 	if ( !$thumbnail_src )
@@ -150,8 +151,9 @@ function sketchy_scripts() {
 		if ( $maincolor ) {
 			$newbg = sketchy_background_color($maincolor);
 			$newmask = sketchy_mask_color($maincolor);
-			$css .= ".site-branding { box-shadow: 0 -8px 8px ".$maincolor.";border-left: 1px solid ".$maincolor.";border-right: 1px solid ".$maincolor.";}";
-			$css .= ".navigation-top { box-shadow: 0 8px 8px ".$maincolor.";border-left: 1px solid ".$maincolor.";border-right: 1px solid ".$maincolor.";border-bottom: 1px solid ".$maincolor.";}";
+			$css .= ".site-description { color: ".$maincolor."; }";
+			$css .= ".site-branding { box-shadow: 0 0 8px ".$maincolor.";border-left: 1px solid ".$maincolor.";border-right: 1px solid ".$maincolor.";}";
+			$css .= ".navigation-top { box-shadow: 0 0 8px ".$maincolor.";border-left: 1px solid ".$maincolor.";border-right: 1px solid ".$maincolor.";border-bottom: 1px solid ".$maincolor.";}";
 			$css .= "#comments { box-shadow: 0 0 8px ".$maincolor.";border: 1px solid ".$maincolor.";}";
 			$css .= ".comment-reply-link:hover { background-color: ".$newmask."; }";
 			$css .="li.bypostauthor > article > footer > div.comment-metadata > b.author-url, li.bypostauthor > article > footer > div.comment-metadata > b.author-url a { color: ".$maincolor."; }";
@@ -164,7 +166,7 @@ function sketchy_scripts() {
 				$css .= ".sidebar-inline { border-color: ".$maincolor."; }";
 			}
 			else {
-				$css .= ".navigation-top .current_page_item > a {text-shadow: 1px 1px 2px ".$maincolor.";}";
+				$css .= ".navigation-top .current_page_item > a {text-shadow: 1px 1px 8px ".$maincolor.";}";
 			}			
 		}
 	}

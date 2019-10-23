@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package WordPress
- * @subpackage SkyWarp2
+ * @subpackage Sketchy
  * @since 1.0
  * @version 1.0
  */
@@ -26,21 +26,8 @@ get_header(); ?>
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
-					$args = array(
-						'prev_text' => '<span class="nav-title"><span class="nav-title-icon-wrapper">' . sketchy_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-						'next_text' => '<span class="nav-title">%title<span class="nav-title-icon-wrapper">' . sketchy_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-						'screen_reader_text'=>'文章导航'
-					);
-					if ( function_exists('apip_get_post_navagation') ){
-						apip_get_post_navagation( $args );
-					}
-					else {
-						the_post_navigation( $args );
-					}
-					
-
 				endwhile; // End of the loop.
-				get_template_part( 'template-parts/post/more-recommended' );
+				get_template_part( 'template-parts/post/single-navigation' );
 			?>
 
 		</main><!-- #main -->
