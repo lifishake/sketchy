@@ -137,7 +137,7 @@ function  sketchy_add_single_inline_css() {
 	}
 
 	if (""!=$css) {
-		wp_add_inline_style('sketchy-style', $css);  
+	wp_add_inline_style('sketchy-style', $css);  
 	}
 }
-add_action( 'wp_enqueue_scripts', 'sketchy_add_single_inline_css',2000 );
+add_action( 'wp_enqueue_scripts', 'sketchy_add_single_inline_css',20 );

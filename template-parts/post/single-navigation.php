@@ -31,7 +31,7 @@
     if (empty($g_related)) {
         return;
     }
-    //$score = apip_get_post_weigh();
+
     $score = 4096;
 
     echo '<div class="related-posts"><h2 class="related-post-title">相关阅读</h2>';
