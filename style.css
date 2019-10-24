@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 1.1
+Version: 1.2
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1486,9 +1486,9 @@ body.page .entry-title {
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: 700;
-	padding: 1em 0 3em;
+	padding: 2em 0 3em;
 	text-align: center;
-	 margin-top:1em;
+	margin-top: 1em;
 }
 
 .pagination .icon,
@@ -1536,7 +1536,7 @@ body.page .entry-title {
 	font-size: 24px;
 	font-size: 1.5rem;
 	line-height: 1;
-	padding: 0.25em 0.5em 0.25em;
+	padding: 0.25em 0.5em 0.4em;
 	background-color: #b2b7b3;
 	color: #FFFFFF;
 	box-shadow: none;
