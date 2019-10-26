@@ -11,10 +11,16 @@
  */
 
 ?>
+<?php $limit = is_page('my-tag-cloud') || is_page('archives') || is_page('archive') || is_page('about');?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($limit ? "page-no-edge":"" ); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php if (!$limit) {
+				the_title( '<h1 class="entry-title">', '</h1>' ); 
+		}
+		else{
+			the_title( '<h1 class="screen-reader-text">', '</h1>' ); 
+		}?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
