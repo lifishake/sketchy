@@ -222,8 +222,14 @@ function sketchy_background_color($refcolor) {
 function sketchy_mask_color($refcolor) {
 	$rgbref = hex2rgb($refcolor);
 	$hsvref = rgb2hsv($rgbref);
-	$hsvref[1] = 16;
-	$hsvref[2] = 93;
+	if (abs($rgbref[0] - $rgbref[1]) + abs( $rgbref[2] - $rgbref[0])+abs( $rgbref[1] - $rgbref[2]) <=30){
+		$hsvref[1] = $hsvref[1]/3;
+		$hsvref[2] = 93;
+	}
+	else {
+		$hsvref[1] = 16;
+		$hsvref[2] = 93;
+	}	
 	$rgb = hsv2rgb($hsvref) ;
 	$str = sprintf("#%1$02X%2$02X%3$02X",$rgb[0],$rgb[1],$rgb[2]) ;
 	return $str;
