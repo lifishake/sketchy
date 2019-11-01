@@ -1,5 +1,9 @@
 
-(function( $ ) {
+
+
+(
+	
+	function( $ ) {
 	/**
 		* 无限滚动
 		*/
@@ -38,17 +42,17 @@
 
 	function g($) {
         return ($.which > 0 || "mousedown" === $.type || "mousewheel" === $.type) && f.stop().off("scroll mousedown DOMMouseScroll mousewheel keyup", g);
-    }
+	}
 
 	var f = $("html, body");
 	$(".scroll-to-top").on("click touchstart touchend", function ($) {
+		$.preventDefault();
 		f.on("scroll mousedown DOMMouseScroll mousewheel keyup", g);
 		f.animate({
 			scrollTop: 0
-		}, 1e3, function () {
+		}, 1000, function () {
 			f.stop().off("scroll mousedown DOMMouseScroll mousewheel keyup", g);
 		});
-		$.preventDefault();
 	});
 
 	// Fire on document ready.
@@ -77,3 +81,5 @@
 	});
 
 })( jQuery );
+	
+	

@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 1.3
+Version: 1.4
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -848,9 +848,7 @@ a .nav-title,
 .site-footer .widget-area ul li a {
 	text-decoration: none;
 	-webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
-	transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
-	transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
 	-webkit-box-shadow: inset 0 -1px 0 #660000;
 	box-shadow: inset 0 -1px 0 #660000;
 }
@@ -867,9 +865,7 @@ a .nav-title,
     -webkit-box-shadow: inset 0 -1px 0 #660000; 
 	box-shadow: inset 0 -1px 0 #660000; 
 	-webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
-	transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
-	transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
 }
 
 .entry-content a:hover,
@@ -2019,14 +2015,11 @@ h2.related-post-title {
 #svg-warnning,
 #js-warnning {
 	position: fixed;
-	width: 100%;
-	height: 95%;
-	height: 95vh;
-	max-height: 768px;
-	left: 0;
-	right: 0;
-	top: 5px;
-	background: #fff none repeat scroll 0 0;
+	width: 92%;
+	height: 80%;
+	left: 4%;
+	top: 10%;
+	background: rgba(240, 240, 240,.85) none repeat scroll 0 0;
 	display: none;
 }
 
@@ -2280,10 +2273,7 @@ span.mention {
 }
 
 .comment-reply-link {
-	position: absolute;
-	right: 0.5em;
-	top: 0.5em;
-	padding: 0.5em 1em;
+	padding: 0 1em;
 }
 
 a.comment-reply-link {
