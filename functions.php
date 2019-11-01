@@ -223,6 +223,7 @@ function sketchy_mask_color($refcolor) {
 	$rgbref = hex2rgb($refcolor);
 	$hsvref = rgb2hsv($rgbref);
 	if (abs($rgbref[0] - $rgbref[1]) + abs( $rgbref[2] - $rgbref[0])+abs( $rgbref[1] - $rgbref[2]) <=30){
+		$hsvref[0] = rand(0,359);
 		$hsvref[1] = $hsvref[1]/3;
 		$hsvref[2] = 93;
 	}
