@@ -79,12 +79,21 @@ function sketchy_replace_header_image( $html, $header, $attr )
 
 function sketchy_get_prev_post() {
 	//TBD
-	return get_previous_post();
+	if (function_exists('apip_get_prev_post')) {
+		return apip_get_prev_post();
+	}
+	else {
+		return get_previous_post();
+	}
 }
 
 function sketchy_get_next_post() {
-	//TBD
-	return get_next_post();
+	if (function_exists('apip_get_next_post')) {
+		return apip_get_next_post();
+	}
+	else {
+		return get_next_post();
+	}
 }
 
 function  sketchy_add_single_inline_css() {
