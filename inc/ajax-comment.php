@@ -78,6 +78,8 @@ function sketchy_newcomment( ) {
         ajax_comment_err($err_str);
         exit;
     } 
+    $user = wp_get_current_user();
+    do_action( 'set_comment_cookies', $comment, $user );
     $GLOBALS['comment'] = $comment;
 	return $comment;
 }
