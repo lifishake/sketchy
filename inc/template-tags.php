@@ -209,13 +209,16 @@ function sketchy_rel_comment_date() {
  * 来源: 破袜子原创
  */
 function sketchy_time_link() {
-  $time_string = '<span class="calendar-desc">%1$s<time class="entry-date published updated" datetime="%2$s">%3$s</time></span>';
-
+  $time_string = '<span class="calendar-desc">%1$s<time class="entry-date published updated" datetime="%2$s">%3$s</time>%4$s</span>';
+  $festival = "";
+  if (function_exists('apip_festival')) {
+    $festival = apip_festival();
+  }
   $time_string = sprintf( $time_string,
   sketchy_get_svg( array( 'icon' => 'calendar' ) ),
   get_the_date( DATE_W3C ),
-  sketchy_rel_post_date()
-  );
+  sketchy_rel_post_date(),
+  $festival);
 
   return $time_string;
 }
@@ -346,6 +349,10 @@ function the_sketchy_excerpt(){
   return;
   }
   $keyword = get_search_query();
+  if (!$keyword) {
+    the_excerpt();
+    return;
+  }
   $text = get_the_content();
   $text = strip_shortcodes($text);
     $text = str_replace( ']]>', ']]&gt;', $text );
@@ -355,8 +362,7 @@ function the_sketchy_excerpt(){
     	$return = mb_substr($text,$pos-10,50,'utf-8').'...';
     }
     else {
-    	$return = mb_substr($text,0,50,'utf-8').'...'
-;
+    	$return = mb_substr($text,0,50,'utf-8').'...';
     }
     $return = mb_ereg_replace($keyword, '<span class="highlight">'.$keyword.'</span>', $return);
     echo $return;
