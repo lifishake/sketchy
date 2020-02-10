@@ -26,7 +26,9 @@
             mb_regex_encoding("UTF-8");
 			$keyword = get_search_query();
 			$text = get_the_title();
-			$text = mb_ereg_replace($keyword, '<span class="highlight">'.$keyword.'</span>', $text); //mb_ereg_replace是多语言支持(utf-8)函数
+			if ($keyword) {
+				$text = mb_ereg_replace($keyword, '<span class="highlight">'.$keyword.'</span>', $text); //mb_ereg_replace是多语言支持(utf-8)函数
+			}
 			$title = sprintf('<h2 class="entry-title"><a href="%1$s" rel="bookmark">%2$s</a></h2>',esc_url( get_permalink()),$text );
 			echo $title; 
 		?>

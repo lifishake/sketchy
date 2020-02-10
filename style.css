@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 1.5
+Version: 1.8
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -184,7 +184,7 @@ small {
 
 sub,
 sup {
-	font-size: 75%;
+	font-size: 75%;                                        
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
@@ -3267,113 +3267,5 @@ object {
 	.wrap {
 		margin-left: 5px;
 		margin-right: 5px;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-		background-color: #222622;
-	}
-	a {
-		color: #d34570;
-	}
-	.entry-title a,
-	.entry-meta a,
-	.entry-footer a,
-	.entry-footer .cat-links a,
-	.entry-footer .date-links a,
-	.entry-footer .tags-links a,
-	.entry-footer .weather-links a,
-	.edit-link a,
-	.comment-navigation a,
-	.author-url a,
-	a .nav-title,
-	.pagination a,
-	.comments-pagination a,
-	.site-info a,
-	.widget .widget-title a,
-	.widget ul li a,
-	.site-footer .widget-area ul li a {
-		-webkit-box-shadow: inset 0 -1px 0 #d34570;
-		box-shadow: inset 0 -1px 0 #d34570;
-	}
-	input[type="text"],
-	input[type="email"],
-	input[type="url"],
-	input[type="search"],
-	textarea,
-	.navigation-top {
-		color: #939b8c;
-		background: rgba(34,38,34,.95);/*F7FCF8*/
-	}
-	.navigation-top.wrap::after {
-		border-top: 8px rgba(34,38,34,.75) solid;
-	
-	}
-	.page .site-main .page,
-	.archive .site-main .post,
-	.search .site-main .post ,
-	.single .site-main .post ,
-	.blog .site-main .post,
-	#comments {
-		background-color:#222622;
-	}
-	.page .site-main .page{
-		background-color:rgba(34,38,34, 0.5);
-	}
-
-	body,
-	button,
-	input,
-	select,
-	textarea,
-	.main-navigation a,
-	.menu-toggle,
-	.dropdown-toggle,
-	.page-title,
-	body.page .entry-title,
-	.entry-title a,
-	.page-numbers.current,
-	.entry-content h2,
-	.entry-footer .license-cc,
-	.comment-body,
-	li.bypostauthor > article > footer > div.comment-metadata > b.author-url,
-	li.bypostauthor > article > footer > div.comment-metadata > b.author-url a,
-	.butterBar-message,
-	h2.widget-title,
-	.widget ul li,
-	.no-svg .social-navigation a,
-	.site-title,
-	.site-title a {
-		color: #939b8c;
-	}
-	.site-branding::after {
-		background: -webkit-linear-gradient(top, rgba(34,38,34,0.75) 0%, rgba(34,38,34,1) 100%);
-		background: linear-gradient(to bottom, rgba(34,38,34,0.75) 0%, rgba(34,38,34,1) 100%);
-	}
-	.site-footer {
-		background: -webkit-linear-gradient(top, rgba(34,38,34,0.2) 0, rgba(34,38,34,0.75) 50%, rgba(34,38,34,1) 100%);
-		background: linear-gradient(to bottom, rgba(34,38,34,0.2) 0, rgba(34,38,34,0.75) 50%, rgba(34,38,34,1) 100%);
-	}
-	.piced-link-window::after {
-		background: -webkit-radial-gradient(circle, rgba(34,38,34,0.8) 5%, rgba(34,38,34,0.75) 18%, rgba(34,38,34,1) 74%);
-		background: radial-gradient(circle, rgba(34,38,34,0.8) 5%, rgba(34,38,34,0.75) 18%, rgba(34,38,34,1) 74%);
-	}
-	.entry-title a {
-		-webkit-box-shadow: inset 0 -1px 0 #660000;
-		box-shadow: inset 0 -1px 0 #660000; /* Equivalant to #f0f0f0 */
-	}
-	.site::after{ background-color: #171717;}
-	.comment-reply-link:hover { background-color: #171717; }
-	.site-branding,
-	.navigation-top,
-	#comments { box-shadow: 0 0 8px #171717;}
-	.single .site-main .post, .blog .site-main .post{ box-shadow: 0 0 8px #171717;}
-	.navigation-top .current_page_item > a {text-shadow: 1px 1px 8px #171717;}
-	span.license-cc a:first-child {
-		background-color: #b2b7b3;
-	}
-	article img {
-		opacity: 0.8;
 	}
 }
