@@ -9,8 +9,8 @@ Version: 1.8
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, footer-widgets, sticky-post, theme-options, threaded-comments
-Text Domain: sketchy
+Tags: one-column, flexible-header, custom-header, custom-menu, footer-widgets, sticky-post, threaded-comments
+Text Domain: //github.com/lifishake/sketchy
 
 欢迎所有人修改这款主题并向他人分享你的修改经验。
 再次发布请遵循GPL。
@@ -19,14 +19,9 @@ bg:#F7FCF8; 接近彩电灰屏的颜色
 text:#000200; 非常深的墨绿
 阴影、边框：#B2B7B3
 链接：#660000（rust）
-深背景：#EDEFED
-comment：#736B89；
-link:#000200;
+浅边框：#EDEFED
 hover:#B7410E;
-social-hover:#B7410E;
-272947
-660000
-B7410E
+
 */
 
 /*--------------------------------------------------------------
