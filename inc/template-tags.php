@@ -262,6 +262,11 @@ function sketchy_entry_meta(){
         $all_meta.= '<span class="tag-desc">' . sketchy_get_svg( array( 'icon' => 'hashtag' ) ) . $tags_list . '</span>';
       }
   }
+  if ($all_meta !="") {
+    $heweather = apip_get_heweather('notext');
+    if ('NONE' !== $heweather && 'INVALID' !== $heweather && '' !== $heweather)
+      $all_meta.=" ".$heweather;
+  }
   echo $all_meta;
   if ( $has_edit_link ) {
     sketchy_edit_link();
@@ -301,7 +306,6 @@ function sketchy_entry_footer() {
           echo '<span class="weather-links">'.$heweather. '</span>';
       }
   }
-  sketchy_edit_link();
   echo '</span>';
   }
 
