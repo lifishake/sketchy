@@ -107,7 +107,6 @@ function sketchy_scripts() {
 	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20191210');
 
 	wp_enqueue_script( 'sketchy-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
-	wp_enqueue_script( 'sketchy-infinite-scroll', get_theme_file_uri( '/assets/js/jquery.infinitescroll.min.js' ), array(), '1.0', true );
 
 	$sketchy_l10n = array(
 		'quote'          => sketchy_get_svg( array( 'icon' => 'quote-right' ) ),

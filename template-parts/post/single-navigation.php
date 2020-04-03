@@ -35,8 +35,6 @@
         return;
     }
 
-    $score = 4096;
-
     echo '<div class="related-posts"><h2 class="related-post-title">相关阅读</h2>';
     foreach ($g_related as $r) {
         $post_id = $r["object_id"];
@@ -44,7 +42,7 @@
         printf( $formated_str_link,
             get_permalink( $post->ID ),
             apply_filters( 'the_title', $post->post_title ),
-            sprintf("相关度:&nbsp;%s&#37;", floor(100*$r["evaluate"]/$score)),
+            sprintf("相关度:&nbsp;%s&#37;", $r["evaluate"]),
             "nav-id-".$post->ID
         );
     }
