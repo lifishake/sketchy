@@ -119,7 +119,7 @@ function sketchy_scripts() {
 		$sketchy_l10n['icon']           = sketchy_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
 	}
 
-	wp_enqueue_script( 'sketchy-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '20190111', true );
+	wp_enqueue_script( 'sketchy-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '20200408', true );
 
 	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 
