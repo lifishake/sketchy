@@ -4,21 +4,6 @@
 (
 	
 	function( $ ) {
-	/**
-		* 无限滚动
-		*/
-		var $container = $('main');
-		$container.infinitescroll({
-		  navSelector  : '.posts-navigation',
-		  nextSelector : '.nav-previous a',
-		  itemSelector : 'article.post',
-		  loading: {
-			  finishedMsg: '',
-			  msgText:''
-			}
-		  }
-		);
-
 	/*
 	 * Test if inline SVGs are supported.
 	 * @link https://github.com/Modernizr/Modernizr/
