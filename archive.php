@@ -40,11 +40,12 @@ get_header(); ?>
 				get_template_part( 'template-parts/post/content', get_post_format() );
 
 			endwhile;
-
+			
 			the_posts_pagination( array(
-				'prev_text' => sketchy_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">前一页</span>',
-				'next_text' => '<span class="screen-reader-text">后一页</span>' . sketchy_get_svg( array( 'icon' => 'arrow-right' ) ),
+				'prev_text' => '&larr;<span class="screen-reader-text">上一页</span>',
+				'next_text' => '<span class="screen-reader-text">下一页</span>&rarr;',
 				'before_page_number' => '<span class="meta-nav screen-reader-text">页</span>',
+				'mid_size' => 4,
 			) );
 
 		else :
