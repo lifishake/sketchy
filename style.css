@@ -887,6 +887,13 @@ a .nav-title,
 	box-shadow: 0 0 0 8px #ffd2e7;
 }
 
+/*achp special*/
+.entry-content ul li .achp-child a,
+.entry-content ul li .achp-child a:hover{
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
 /*--------------------------------------------------------------
 12.0 Navigation
 --------------------------------------------------------------*/
@@ -1648,8 +1655,35 @@ body .entry-header {
     display: inline-block;
     font-weight: 700;
     line-height: inherit;
-    padding: 0.25em 2.5em 0.25em 1.5em;
-    text-shadow: 1px -1px 3px #7c7b7a;
+    padding: 0.25em 1.3em;
+	position: relative;
+}
+
+.entry-content h2:before,
+.entry-content h2:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	font-size: 1.2rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	-webkit-mask-image:url('./assets/images/totem.svg');
+    -webkit-mask-repeat: no-repeat no-repeat;
+	mask-image: url('./assets/images/totem.svg')  ;
+    mask-repeat: no-repeat no-repeat;
+	background-color: #000200;
+	-webkit-mask-position: left top;
+	mask-position: left top;
+}
+
+.entry-content h2:before {
+	left: 0;
+	top: 0.65rem;
+}
+
+.entry-content h2:after {
+	right: 0;
+	top: 0.65rem;
 }
 
 .entry-content .more-link:before {
@@ -2361,6 +2395,44 @@ li.bypostauthor > article > footer > div.comment-metadata > b.author-url a {
     padding:12px 25px;
 }
 
+.lds-facebook {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+  }
+  .lds-facebook div {
+	display: inline-block;
+	position: absolute;
+	left: 8px;
+	width: 16px;
+	background: rgba(239,239,234,0.97);
+	animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+	left: 8px;
+	animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+	left: 32px;
+	animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+	left: 56px;
+	animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+	0% {
+	  top: 8px;
+	  height: 64px;
+	}
+	50%, 100% {
+	  top: 24px;
+	  height: 32px;
+	}
+  }
+  
+
 /*--------------------------------------------------------------
 15.0 Widgets
 --------------------------------------------------------------*/
@@ -2502,6 +2574,7 @@ img,
 video {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
+	opacity:1;
 }
 
 img.alignleft,

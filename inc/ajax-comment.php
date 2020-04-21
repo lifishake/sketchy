@@ -93,7 +93,7 @@ function sketchy_additional_comment_show( $comment ) {
     if ( '0' == $comment->comment_approved )
     {
         ajax_comment_err("评论审核中...");
-        exit();
+        $success = 20;
     }
     if ($comment->comment_author_email == "2b@pewae.com")
     {
@@ -116,6 +116,9 @@ function sketchy_additional_comment_show( $comment ) {
                 <?php comment_text(); 
                 if ($success===10) {
                     echo("</br><p><em><b>博主看你发广告太辛苦，替你换了个昵称。</br>惊不惊喜，意不意外？</b></em></p>");
+                }
+                else if ($success===20) {
+                    echo("</br><p>检测到首次留言，评论审核中...</p>");
                 }
                 ?>
             </div>

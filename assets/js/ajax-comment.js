@@ -1,4 +1,5 @@
 jQuery(document).ready(function(jQuery) {
+
 	var $commentform = jQuery('#commentform'),
 	$comments = jQuery('#comments-title'),
 	$cancel = jQuery('#cancel-comment-reply-link'),
@@ -19,7 +20,6 @@ jQuery(document).ready(function(jQuery) {
 					this.value = ''
 				});
 				var t = addComment,
-				cancel = t.I('cancel-comment-reply-link'),
 				temp = t.I('wp-temp-form-div'),
 				respond = t.I(t.respondId),
 				post = t.I('comment_post_ID').value,
@@ -33,9 +33,7 @@ jQuery(document).ready(function(jQuery) {
 						jQuery('.comment-list').append(data);// your comments wrapper
 
 				}
-				t.createButterbar("提交成功");
-				cancel.style.display = 'none';
-				cancel.onclick = null;
+				t.createButterbar("提交成功!");
 				t.I('comment_parent').value = '0';
 				if (temp && respond) {
 					temp.parentNode.insertBefore(respond, temp);
@@ -52,10 +50,8 @@ jQuery(document).ready(function(jQuery) {
 			div,
 			comm = t.I(commId),
 			respond = t.I(respondId),
-			cancel = t.I('cancel-comment-reply-link'),
 			parent = t.I('comment_parent'),
 			post = t.I('comment_post_ID');
-			$cancel.text(cancel_text);
 			t.respondId = respondId;
 			if (!t.I('wp-temp-form-div')) {
 				div = document.createElement('div');
@@ -68,20 +64,6 @@ jQuery(document).ready(function(jQuery) {
 			},
 			400);
 			parent.value = parentId;
-			cancel.style.display = '';
-			cancel.onclick = function() {
-				var t = addComment,
-				temp = t.I('wp-temp-form-div'),
-				respond = t.I(t.respondId);
-				t.I('comment_parent').value = '0';
-				if (temp && respond) {
-					temp.parentNode.insertBefore(respond, temp);
-					temp.parentNode.removeChild(temp);
-				}
-				this.style.display = 'none';
-				this.onclick = null;
-				return false;
-			};
 			try {
 				t.I('comment').focus();
 			}
@@ -98,9 +80,30 @@ jQuery(document).ready(function(jQuery) {
 		},
 		createButterbar: function(message) {
 			var t = this;
-			t.clearButterbar();
-			jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
-			setTimeout("jQuery('.butterBar').remove()", 3000);
+			t.clearButterbar();	
+			if ("提交中...." != message)
+			{
+				jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
+				setTimeout("jQuery('.butterBar').remove()", 2000);
+			}
+			else {
+				jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p><div class="lds-facebook"><div></div><div></div><div></div></div></div>');
+			}
 		}
 	};
 });
+
+//Ctrl + Enter 提交。20200418从apip中移植
+document.getElementById("comment").onkeydown = function (moz_ev){
+	//var key_id = "submit";
+	var ev = null;
+	if (window.event){
+		ev = window.event;
+			}else{
+			ev = moz_ev;
+		}
+		if (ev != null && ev.ctrlKey && ev.keyCode == 13)
+		{
+		document.getElementById("reload").click();
+		}
+	}
