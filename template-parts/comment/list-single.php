@@ -25,7 +25,12 @@ if ( post_password_required() ) {
 
 <?php
 function sketchy_single_comment( $comment, $args, $depth ) {
-    $comment_author_url = apply_filters('comment_url',$comment->comment_author_url, $comment->comment_ID );
+    if ($comment->user_id == 0) {
+        $comment_author_url = apply_filters('comment_url',$comment->comment_author_url, $comment->comment_ID );
+    } else {
+        $comment_author_url = $comment->comment_author_url;
+    }
+    
     $avatar_img = get_avatar( $comment, $args['avatar_size'] );
     $comment_author_name = $comment->comment_author;
     $parent_comment_id = $comment->comment_parent ;
@@ -44,11 +49,17 @@ function sketchy_single_comment( $comment, $args, $depth ) {
 
                     <div class="comment-metadata">
                         <?php 
-                        if (''===$comment_author_url || $parent_comment_id > 0) {
-                            printf( '<b class="fn author-url">%s</b>', get_comment_author_link( $comment ) );
+                        if ($comment->user_id>0) {
+                            $comment_author_url = "";
+                        }
+                        if (''===$comment_author_url) {
+                            printf( '<b class="fn">%s</b>', $comment_author_name );
+                        }
+                        else if ( $parent_comment_id > 0) {
+                            printf( '<b class="fn author-url"><a href="%1$s" target="_blank" rel="external nofollow" class="url">%2$s</a></b>', $comment_author_url, $comment_author_name );
                         }
                         if ( $parent_comment_id > 0 ) {
-                            printf( '<span class="mention"> @%1s </span>', get_comment_author($parent_comment_id) );
+                            printf( '<span class="mention"> @%1$s </span>', get_comment_author($parent_comment_id) );
                         }
                         ?>
                         <time datetime="<?php comment_time( 'c' ); ?>">

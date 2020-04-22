@@ -2269,7 +2269,7 @@ ol.comment-list  li.depth-1 {
 }
 
 .comment-meta {
-	margin: 0.15em 0;
+	margin: 0.25em 0 0.15em 0;
 }
 
 .comment-metadata {
@@ -2318,6 +2318,10 @@ a.comment-reply-link:hover {
 
 .children .comment-author .avatar {
 	display: none;
+}
+
+.bypostauthor b{
+	color:#b2b7b3;
 }
 
 .bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
