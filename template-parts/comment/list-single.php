@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 
 <?php
 function sketchy_single_comment( $comment, $args, $depth ) {
-    $comment_author_url = $comment->comment_author_url;
+    $comment_author_url = apply_filters('comment_url',$comment->comment_author_url, $comment->comment_ID );
     $avatar_img = get_avatar( $comment, $args['avatar_size'] );
     $comment_author_name = $comment->comment_author;
     $parent_comment_id = $comment->comment_parent ;
