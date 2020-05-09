@@ -173,6 +173,19 @@ function sketchy_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'sketchy_scripts' );
 
+//配合apip动态修改chrome浏览器标签颜色
+function sketchy_chrome_tab_color_change($input) {
+	if ( has_post_thumbnail() && is_singular() ) {
+		$picid = get_post_thumbnail_id();
+		$maincolor = get_post_meta($picid, "apip_main_color", true);
+		if ( $maincolor ) {
+			return $maincolor;
+		}
+	}
+	return $input;
+}
+add_filter( 'apip_tab_color', 'sketchy_chrome_tab_color_change' );
+
 function sketchy_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 
