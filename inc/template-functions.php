@@ -52,6 +52,7 @@ function sketchy_get_thumbnail_str($ID = "",$type="sketchy-featured-image") {
             if ($thumbnails) (string)$thumbnail = $thumbnails[0];
 		}
 	endif;
+    $thumbnails = str_replace( get_bloginfo('url')."/wp_content", "../../", $thumbnails);
     return $thumbnail;
 }
 

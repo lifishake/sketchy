@@ -104,7 +104,7 @@ add_action( 'wp_head', 'sketchy_javascript_detection', 0 );
 function sketchy_scripts() {
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20200422');
+	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20210413');
 
 	wp_enqueue_script( 'sketchy-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
@@ -138,6 +138,7 @@ function sketchy_scripts() {
     $header_src = get_theme_file_uri( 'assets/images/header.jpg' );
 	if ( !$thumbnail_src )
 	$thumbnail_src = $header_src;
+    $thumbnail_src = str_replace( get_bloginfo('url')."/wp_content", "../../", $thumbnail_src);
 
 	$css .= ".comment-form-comment{background: #fff url(\"".$thumbnail_src." \") no-repeat center center ; background-size: 100%, auto;}";
 	$css .= ".site-branding{
