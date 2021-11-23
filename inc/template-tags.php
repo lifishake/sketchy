@@ -263,7 +263,10 @@ function sketchy_entry_meta(){
       }
   }
   if ($all_meta !="") {
-    $heweather = apip_get_heweather('notext');
+	$heweather = '';
+	if(function_exists('apip_get_heweather')) {
+		$heweather = apip_get_heweather('notext');
+	}
     if ('NONE' !== $heweather && 'INVALID' !== $heweather && '' !== $heweather)
       $all_meta.=" ".$heweather;
   }

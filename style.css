@@ -883,8 +883,8 @@ a .nav-title,
 /* Fixes linked images */
 .entry-content a img,
 .widget a img {
-	-webkit-box-shadow: 0 0 0 8px #ffd2e7;
-	box-shadow: 0 0 0 8px #ffd2e7;
+	-webkit-box-shadow: 0 0 0 2px #B7410E;
+	box-shadow: 0 0 0 2px #B7410E;
 }
 
 /*achp special*/
