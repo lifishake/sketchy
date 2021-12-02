@@ -50,7 +50,7 @@ function sketchy_archive_title() {
  * 来源: 破袜子原创
  */
 function sketchy_get_categories_trace(){
-  if ( !is_single() && !is_category() ||is_attachment() )
+  if ( !is_singular(array('post','page')) && !is_category() ||is_attachment() )
   {
   return '';
   }
@@ -69,6 +69,9 @@ function sketchy_get_categories_trace(){
   return '';
   }
   $return = get_category_parents($catID, true, ' &raquo; ', false);
+  if(''==$return || NULL == $return || false == $return) {
+	  return '';
+  }
   $pos = strrpos($return,"&raquo;");
   if ( $pos !== false ) {
   $return = substr_replace($return, "", -8,8);

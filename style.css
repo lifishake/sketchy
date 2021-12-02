@@ -2721,6 +2721,21 @@ object {
 	width: auto;
 }
 
+/*--------------------------------------------------------------*/
+.bddb-gallery-wall {
+	background-color: rgba(247,252,248,.95);
+	box-shadow: 0 0 8px #EDEFED;
+	z-index:3;
+}
+
+.bddb-poster-thumb a img{
+	box-shadow: 0 0 5px #B2B7B3;
+}
+.bddb-poster-thumb a img:hover,
+.bddb-poster-thumb a img:focus{
+	box-shadow: 0 0 5px #B7410E;
+}
+
 /*--------------------------------------------------------------
 18.0 Media Queries
 --------------------------------------------------------------*/
