@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 2.6
+Version: 2.7
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -59,6 +59,8 @@ hover:#B7410E;
 1.0 Normalize
 Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');
+
 @font-face{
   font-family:'pwe2019';	/*自定义字体名字*/
   src: url('./assets/fonts/pwe2019.eot');	/*IE9.0+*/
@@ -71,7 +73,6 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
   font-style: normal;
   font-display: swap;
 }
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');
 
 html {
 	font-family: Helvetica, Arial, Calibri, Avenir, 'Lucida Grande','Noto Serif SC', serif, 'Microsoft YaHei','Microsoft JhengHei',SimHei, NSimSun, SimSun,STHeitiTC-Light,"PingFang TC", "Helvetica Neue",  'Hiragino Sans GB', sans-serif;
