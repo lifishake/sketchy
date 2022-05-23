@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 2.8
+Version: 2.9
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -59,7 +59,10 @@ hover:#B7410E;
 1.0 Normalize
 Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');*/
+/*
+@import url('https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap');
+*/
 
 @font-face{
   font-family:'pwe2019';	/*自定义字体名字*/
@@ -2744,11 +2747,36 @@ object {
 
 .bddb-poster-thumb a img{
 	box-shadow: 0 0 5px #B2B7B3;
+	opacity: .8;
 }
 .bddb-poster-thumb a img:hover,
 .bddb-poster-thumb a img:focus{
 	box-shadow: 0 0 5px #B7410E;
+	opacity: 1;
+	animation: WallHighlight 1.8s linear 1
+	/*animation: swing 1s 1;*/
 }
+
+@keyframes WallHighlight
+{
+  0%
+  {
+    transform:scale(1.0);
+	opacity: .8;
+  }
+  33%
+  {
+    transform:scale(1.2);
+	opacity: 1;
+	box-shadow: 0 0 25px #B7410E;
+  }
+  100%
+  {
+    transform:scale(0.98);
+	opacity: 1;
+  }
+}
+
 
 /*--------------------------------------------------------------
 18.0 Media Queries
