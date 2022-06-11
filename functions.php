@@ -104,7 +104,10 @@ add_action( 'wp_head', 'sketchy_javascript_detection', 0 );
 function sketchy_scripts() {
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20220526');
+	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20220607');
+	if (function_exists('apip_is_debug_mode') && apip_is_debug_mode()) {
+		add_filter('stylesheet_uri', 'sketchy_debug_style', 10, 2);
+	}
 
 	wp_enqueue_script( 'sketchy-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
@@ -173,6 +176,10 @@ function sketchy_scripts() {
 	wp_add_inline_style('sketchy-style', $css);
 }
 add_action( 'wp_enqueue_scripts', 'sketchy_scripts' );
+
+function sketchy_debug_style($stylesheet_uri, $stylesheet_dir_uri){
+	return $stylesheet_dir_uri. '/style_debug.css';
+}
 
 //配合apip动态修改chrome浏览器标签颜色
 function sketchy_chrome_tab_color_change($input) {
