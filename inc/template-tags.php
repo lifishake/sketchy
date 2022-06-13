@@ -299,6 +299,7 @@ function sketchy_entry_footer() {
   echo '<span class="cat-tags-links">';
   //日期
   echo '<span class="date-links">' . sketchy_get_svg( array( 'icon' => 'calendar' ) ) . sketchy_get_dates_trace() . '</span>';
+
   //类别
   echo '<span class="cat-links">' . sketchy_get_svg( array( 'icon' => 'folder-open' ) ) . sketchy_get_categories_trace() . '</span>';
   //标签
@@ -312,6 +313,11 @@ function sketchy_entry_footer() {
           echo '<span class="weather-links">'.$heweather. '</span>';
       }
   }
+
+  if (is_singular()) {
+    sketchy_edit_link();
+  }
+
   echo '</span>';
   }
 
