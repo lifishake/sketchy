@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 3.6
+Version: 3.7
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,7 +61,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
 /*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');*/
 
-@import url('https://fonts.lug.ustc.edu.cn/css2?family=Noto+Serif+SC&display=swap');
+/*@import url('https://fonts.lug.ustc.edu.cn/css2?family=Noto+Serif+SC&display=swap');*/
 
 @font-face{
   font-family:'pwe2019';	/*自定义字体名字*/
@@ -1450,7 +1450,7 @@ html {
 }
 
 .entry-title {
-	font-family:Helvetica, Arial, Calibri, Avenir, "Lucida Grande", "Microsoft YaHei", STHeitiTC-Light, "PingFang TC", "Helvetica Neue", "Microsoft JhengHei", "Hiragino Sans GB", NSimSun, SimSun, SimHei, STXihei, STHeiti, sans-serif;
+	font-family:Helvetica, Arial, Calibri, Avenir, "Lucida Grande","Noto Sans SC", "Microsoft YaHei", STHeitiTC-Light, "PingFang TC", "Helvetica Neue", "Microsoft JhengHei", "Hiragino Sans GB", NSimSun, SimSun, SimHei, STXihei, STHeiti, sans-serif;
 }
 
 .page-title,
@@ -1692,6 +1692,14 @@ body .entry-header {
 	position: relative;
 }
 
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+	font-family:'Noto Sans SC', 'Microsoft YaHei', SimHei;
+}
+
 .entry-content h2:before {
 	content: "";
 	position: absolute;
@@ -1879,7 +1887,7 @@ span.license-cc a:first-child {
 
 h2.related-post-title {
 	text-align: center;
-	font-family:Helvetica, Arial, Calibri, Avenir, "Lucida Grande", "Microsoft YaHei", STHeitiTC-Light, "PingFang TC";
+	font-family: 'Noto Sans SC', 'Microsoft YaHei', SimHei;
 }
 
 .related-posts {
@@ -2488,7 +2496,8 @@ h2.widget-title {
 	letter-spacing: 0.1818em;
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
-  color: #000200;
+    color: #000200;
+	font-family:'Noto Sans SC', 'Microsoft YaHei', SimHei;
 }
 
 .widget-title a {
