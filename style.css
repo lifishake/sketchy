@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 3.8
+Version: 3.9
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -76,25 +76,8 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
   font-display: swap;
 }
 
-/*本地化字体*/
-@font-face{
-	font-family:'Noto Sans SC';	/*思源黑*/
-	src: url('./assets/fonts/noto-sans.woff2') format('woff2');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-  }
-
-@font-face{
-  font-family:'Noto Serif SC';	/*思源宋*/
-  src: url('./assets/fonts/noto-serif.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 html {
-	font-family: Helvetica, Arial, Calibri, Avenir, 'Lucida Grande','Noto Serif SC', serif, 'Microsoft YaHei','Microsoft JhengHei',SimHei, NSimSun, SimSun,STHeitiTC-Light,"PingFang TC", "Helvetica Neue",  'Hiragino Sans GB', sans-serif;
+	font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	line-height: 1.15;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -144,7 +127,7 @@ hr {
 }
 
 pre {
-	font-family: monospace, monospace;
+	font-family: Consolas, Arial, monospace, "Courier New";
 	font-size: 1em;
 }
 
@@ -181,10 +164,10 @@ del {
 code,
 kbd,
 samp {
-	font-family: monospace, monospace;
+	font-family: Consolas, Arial, monospace, "Courier New";
 	font-size: 1em;
 	letter-spacing: 0;
-    background-color: #C3C8C5;
+    background-color: #E3E8E5;
     display: block;
     text-shadow: none;
     border-left: 5px #555 double;
@@ -614,7 +597,7 @@ address {
 }
 
 pre {
-	background: #e5e5e5;
+	background-color: #E3E8E5;
 	font-family: consolas, "Courier 10 Pitch", Courier, monospace, NSimSun;/*放代码,所以使用等宽字体*/
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -1249,7 +1232,7 @@ html {
 }
 
 .site-title {
-    font-family: pwe2019,Helvetica, Arial, Calibri, Avenir, "Lucida Grande", "Microsoft YaHei", STHeitiTC-Light, "PingFang TC";
+    font-family: pwe2019, Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	clear: none;
 	font-size: 24px;
 	font-size: 1.5rem;
@@ -1274,7 +1257,7 @@ html {
 }
 
 .site-description {
-    font-family: pwe2019,Helvetica, Arial, Calibri, Avenir, "Lucida Grande", "Microsoft YaHei", STHeitiTC-Light, "PingFang TC";
+    font-family: pwe2019, Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-bottom: 0;
@@ -1472,10 +1455,6 @@ html {
 	color: #b2b7b3;
 }
 
-.entry-title {
-	font-family:Helvetica, Arial, Calibri, Avenir, "Lucida Grande","Noto Sans SC", "Microsoft YaHei", STHeitiTC-Light, "PingFang TC", "Helvetica Neue", "Microsoft JhengHei", "Hiragino Sans GB", NSimSun, SimSun, SimHei, STXihei, STHeiti, sans-serif;
-}
-
 .page-title,
 body.page .entry-title {
 	color: #000200;
@@ -1573,7 +1552,7 @@ span .festival {
 }
 
 .nav-links {
-	font-family:pwe2019,Helvetica, Arial, Calibri, Avenir, "Lucida Grande", "Microsoft YaHei", STHeitiTC-Light, "PingFang TC";
+	font-family:pwe2019, Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .nav-links a.page-numbers {
@@ -1720,7 +1699,7 @@ body .entry-header {
 .entry-content h4,
 .entry-content h5,
 .entry-content h6 {
-	font-family:'Noto Sans SC', 'Microsoft YaHei', SimHei;
+	font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .entry-content h2:before {
@@ -1910,7 +1889,7 @@ span.license-cc a:first-child {
 
 h2.related-post-title {
 	text-align: center;
-	font-family: 'Noto Sans SC', 'Microsoft YaHei', SimHei;
+	font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .related-posts {
@@ -1962,7 +1941,7 @@ h2.related-post-title {
 
 .piced-link-window a,
 .piced-link-window span {
-	font-family:Helvetica, Arial, Calibri, Avenir, "Lucida Grande", "Microsoft YaHei", STHeitiTC-Light, "PingFang TC";
+	font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     overflow: hidden;
     line-height: 1.7em;
     white-space: nowrap;
@@ -2520,7 +2499,7 @@ h2.widget-title {
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
     color: #000200;
-	font-family:'Noto Sans SC', 'Microsoft YaHei', SimHei;
+	font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .widget-title a {
