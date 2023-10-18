@@ -138,14 +138,10 @@ function  sketchy_add_single_inline_css() {
 
 	$css = NULL;
 	foreach ($got_ids as $id){
-		$bg_str = sketchy_get_thumbnail_str($id, "sketchy-related");
-		if (empty($bg_str)) {
-			continue;
-		}
 		$picid = get_post_thumbnail_id($id);
 		$maincolor = get_post_meta($picid, "apip_main_color", true);
 		$addi_class = "nav-id-".$id;
-		$css .= " .".$addi_class."{background: #fff url(\"".$bg_str." \") no-repeat center center ; background-size: 100%, auto; z-index:0; border-color: {$maincolor}; box-shadow: 0 0 8px {$maincolor};}";
+		$css .= " .".$addi_class."{border-color: {$maincolor};}";
 	}
 
 	if (""!=$css) {

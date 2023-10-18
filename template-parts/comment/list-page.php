@@ -33,7 +33,7 @@ function sketchy_page_comment( $comment, $args, $depth ) {
             <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
                 <footer class="comment-meta">
                     <div class="comment-author vcard">
-                        <?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
+                        <?php echo sketchy_get_ziface($comment->comment_author); ?>
                     </div><!-- .comment-author -->
 
                     <?php if ( '0' == $comment->comment_approved ) : ?>
