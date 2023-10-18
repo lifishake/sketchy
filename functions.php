@@ -151,10 +151,11 @@ function sketchy_scripts() {
 		if ( $maincolor ) {
 			$newbg = sketchy_background_color($maincolor);
 			$newmask = sketchy_mask_color($maincolor);
+			$css .= "body { background-color: ".$newbg."; }";
 			$css .= ".site-description { color: ".$maincolor."; }";
-			$css .= ".site-branding { box-shadow: 0 0 8px ".$maincolor.";border-left: 1px solid ".$maincolor.";border-right: 1px solid ".$maincolor.";}";
-			$css .= ".navigation-top { box-shadow: 0 0 8px ".$maincolor.";border-left: 1px solid ".$maincolor.";border-right: 1px solid ".$maincolor.";border-bottom: 1px solid ".$maincolor.";}";
-			$css .= "#comments { box-shadow: 0 0 8px ".$maincolor.";border: 1px solid ".$maincolor.";}";
+			$css .= ".site-branding { border-color: ".$maincolor.";}";
+			$css .= ".navigation-top { border-color: ".$maincolor.";}";
+			$css .= "#comments { border-color: ".$maincolor.";}";
 			$css .= ".comment-reply-link:hover { background-color: ".$newmask."; }";
 			$css .="li.bypostauthor > article > footer > div.comment-metadata > b.author-url, li.bypostauthor > article > footer > div.comment-metadata > b.author-url a { color: ".$maincolor."; }";
 			$css .= "span.mention{ color: ".$maincolor."; }";
@@ -162,7 +163,7 @@ function sketchy_scripts() {
 			$css .= ".site::after{ background-color: ".$newmask.";}";
 			if (is_single())
 			{
-				$css .= ".single .site-main .post, .blog .site-main .post{ box-shadow: 0 0 8px ".$maincolor.";border: 1px solid ".$maincolor.";}";
+				$css .= ".single .site-main .post, .blog .site-main .post{ border-color: ".$maincolor.";}";
 				$css .= ".sidebar-inline { border-color: ".$maincolor."; }";
 			}
 			else {
@@ -225,8 +226,8 @@ add_filter( 'get_header_image_tag', 'sketchy_header_image_tag', 10, 3 );
 function sketchy_background_color($refcolor) {
 	$rgbref = hex2rgb($refcolor);
 	$hsvref = rgb2hsv($rgbref);
-	$hsvref[1] = 16;
-	$hsvref[2] = 98;
+	$hsvref[1] = 3;
+	$hsvref[2] = 90;
 	$rgb = hsv2rgb($hsvref) ;
 	$str = sprintf("#%1$02X%2$02X%3$02X",$rgb[0],$rgb[1],$rgb[2]) ;
 	return $str;
@@ -235,6 +236,8 @@ function sketchy_background_color($refcolor) {
 function sketchy_mask_color($refcolor) {
 	$rgbref = hex2rgb($refcolor);
 	$hsvref = rgb2hsv($rgbref);
+	/*v95*/
+	/*
 	if (abs($rgbref[0] - $rgbref[1]) + abs( $rgbref[2] - $rgbref[0])+abs( $rgbref[1] - $rgbref[2]) <=30){
 		$hsvref[0] = rand(0,359);
 		$hsvref[1] = $hsvref[1]/3;
@@ -243,10 +246,30 @@ function sketchy_mask_color($refcolor) {
 	else {
 		$hsvref[1] = 16;
 		$hsvref[2] = 93;
-	}	
+	}
 	$rgb = hsv2rgb($hsvref) ;
-	$str = sprintf("#%1$02X%2$02X%3$02X",$rgb[0],$rgb[1],$rgb[2]) ;
+	$str = sprintf("#%1$02X%2$02X%3$02X",$rgb[0],$rgb[1],$rgb[2]) ;	
+	*/
+	$a = 0.85;
+	if ($hsvref[2]>=95) {
+		$a = $a - (0.05 * ($hsvref[2] - 94));
+	}
+	$str = sprintf("rgb(%d,%d,%d,%0.2f)",$rgbref[0],$rgbref[1],$rgbref[2],$a);
 	return $str;
+}
+
+/**
+ * 作用: 获得昵称的第一个汉字或者前两个英文字符
+ * 来源: 自创
+ */
+function sketchy_get_ziface($nickyname) {
+if (preg_match("/^[\x{20}-\x{7F}][\x{20}-\x{7F}].*$/u", $nickyname)) {
+		$zi=strtoupper(mb_substr($nickyname, 0, 1, 'utf-8'));
+	}
+	else {
+		$zi=mb_substr($nickyname, 0, 1, 'utf-8');
+	}
+	return '<span class="ziface">'.$zi.'</span>';
 }
 
 /**

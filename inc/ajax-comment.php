@@ -103,9 +103,6 @@ function sketchy_additional_comment_show( $comment ) {
     <li <?php comment_class(); ?>>
         <article class="comment-body">
             <footer class="comment-meta">
-                <div class="comment-author vcard">
-                    <?php echo get_avatar( $comment->comment_author_email, $size = '100')?>
-                </div>
                 <div class="comment-metadata">
                     <span><b class="fn author-url"><?php echo get_comment_author_link(); ?></b>
 					</span>
@@ -133,7 +130,6 @@ function sketchy_additional_comment_show( $comment ) {
  * URI: https://fatesinger.com/59
  */
 function ajax_comment_callback(){
-	$comment_author_email ;
     if ( ! wp_verify_nonce($_POST['nonce'],'no-comment-is-best-comment') ) {
         die();
     }
