@@ -147,9 +147,11 @@ html {
 body {
 	margin: 0;
     background-color: #DEE2E5;
+	/*background-image: url(./assets/images/kirby2.png);
+	background-repeat: repeat-x, repeat-y;
     background-position: center left, center right;
-    background-repeat: repeat-y,repeat-y;
-    background-size: 15% auto, 15% auto;
+    background-repeat: repeat-x,repeat-y;
+    background-size: 15% auto, 15% auto;*/
 }
 
 article,
@@ -1382,6 +1384,10 @@ html {
     background: transparent;
 }
 
+.site{
+	background-image: url(./assets/images/grunge-wall.png);
+}
+
 .site::after{
     content: "";
     position: fixed;
@@ -2356,10 +2362,10 @@ ol.comment-list  li.depth-1 {
 }
 
 .comment-author .ziface {
-	opacity: 0.8;
+	opacity: 1.0;
 	display: block;
 	font-size: 3.75rem;
-	font-family: 'Lavishly Yours', 'Long Cang';
+	font-family: 'Lavishly Yours', 'Long Cang', 'HGSGyoshotai';
 	float: left;
 	width:4rem;
 	line-height: 4rem;
@@ -2466,6 +2472,10 @@ a.comment-reply-link:hover {
 .children .comment-author .avatar,
 .children .comment-author .ziface {
 	display: none;
+}
+
+.fn {
+	padding-right: 0.75rem;
 }
 
 .bypostauthor b{

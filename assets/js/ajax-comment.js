@@ -19,21 +19,38 @@ jQuery(document).ready(function(jQuery) {
 				jQuery('textarea').each(function() {
 					this.value = ''
 				});
+				var ct='';
+				var result=0;
+				if (data.body !== undefined) {
+					ct = data.body;
+				} else {
+					ct='未知错误';
+				}
+				if (data.result !== undefined) {
+					result = data.result;
+				}
 				var t = addComment,
 				temp = t.I('wp-temp-form-div'),
 				respond = t.I(t.respondId),
 				post = t.I('comment_post_ID').value,
 				parent = t.I('comment_parent').value;
 				if (parent != '0') {
-					jQuery('#respond').before('<ol class="children">' + data + '</ol>');
+					jQuery('#respond').before('<ol class="children">' + ct + '</ol>');
 				} else {
 					if (jQuery('.comment-list').length == 0)
-						jQuery('#respond').before('<ol>' + data + '</ol>');
+						jQuery('#respond').before('<ol>' + ct + '</ol>');
 					else
-						jQuery('.comment-list').append(data);// your comments wrapper
+						jQuery('.comment-list').append(ct);// your comments wrapper
 
 				}
-				t.createButterbar("提交成功!");
+				if (result===10) {
+					t.createButterbar("提交成功，发现垃圾关键字。");
+				} else if (result===20) {
+					t.createButterbar("提交成功，留言审核中……");
+				} else {
+					t.createButterbar("提交成功!");
+				}
+				
 				t.I('comment_parent').value = '0';
 				if (temp && respond) {
 					temp.parentNode.insertBefore(respond, temp);
