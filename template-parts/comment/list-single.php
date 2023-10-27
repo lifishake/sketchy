@@ -41,7 +41,6 @@ function sketchy_single_comment( $comment, $args, $depth ) {
                 <footer class="comment-meta">
                     <div class="comment-author vcard">
                         <?php if ($comment_author_url) {
-                                //printf('<a class="url" href="%1$s" target="_blank" rel="external nofollow" title="%2$s">%3$s</a>', $comment_author_url, $comment_author_name, $avatar_img);
                                 printf('<a class="url" href="%1$s" target="_blank" rel="external nofollow" title="%2$s">%3$s</a>', $comment_author_url, $comment_author_name, $ziface);
                             } else {
                                 //echo $avatar_img;

@@ -39,8 +39,13 @@ function sketchy_page_comment( $comment, $args, $depth ) {
                     <?php if ( '0' == $comment->comment_approved ) : ?>
                     <p class="comment-awaiting-moderation"><?php echo '评论审核中.'; ?></p>
                     <?php endif; ?>
+                    <div class="comment-metadata">
+                        <?php printf( '<b class="fn">%s</b>', $comment->comment_author ); ?>
+                        <time datetime="<?php comment_time( 'c' ); ?>">
+                                <?php echo sketchy_rel_comment_date(); ?>
+                        </time>
+                    </div>
                 </footer><!-- .comment-meta -->
-
                 <div class="comment-content">
                     <?php $parent_comment_id = $comment->comment_parent ;
                       if ( $parent_comment_id > 0 ) {

@@ -92,36 +92,32 @@ function sketchy_additional_comment_show( $comment ) {
     $success = 0;
     if ( '0' == $comment->comment_approved )
     {
-        ajax_comment_err("评论审核中...");
         $success = 20;
     }
     if ($comment->comment_author_email == "2b@pewae.com")
     {
         $success = 10;
     }
+    $body = sprintf('<li %s><article class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">%s</div><div class="comment-metadata"><span><b class="fn author-url">%s</b></span><b class="fn">%s</b><time datetime="%s">刚刚</time></div></footer><div class="comment-content">%s%s</div></article></li>', 
+                    comment_class('', null, null, false),
+                    sketchy_get_ziface($comment->comment_author),
+                    $comment->comment_author,
+                    $comment->comment_author_url,
+                    $comment->comment_date,
+                    $comment->comment_content,
+                    ($success===20)?"</br><p>检测到首次留言，评论审核中...</p>":(($success===10)?"</br><p><em><b>博主看你发广告太辛苦，替你换了个昵称。</br>惊不惊喜，意不意外？</b></em></p>":""),
+                );
+    $resp['result']=$success;
+    $resp['body']=$body;
+    wp_send_json($resp) ;
 	?>
-    <li <?php comment_class(); ?>>
-        <article class="comment-body">
-            <footer class="comment-meta">
-                <div class="comment-metadata">
-                    <span><b class="fn author-url"><?php echo get_comment_author_link(); ?></b>
-					</span>
-                    <time datetime="<?php comment_time( 'c' ); ?>">刚刚</time>
-                </div>
-            </footer>
-            <div class="comment-content">
-                <?php comment_text(); 
-                if ($success===10) {
-                    echo("</br><p><em><b>博主看你发广告太辛苦，替你换了个昵称。</br>惊不惊喜，意不意外？</b></em></p>");
-                }
-                else if ($success===20) {
-                    echo("</br><p>检测到首次留言，评论审核中...</p>");
-                }
-                ?>
-            </div>
-        </article>
-    </li>
+    
 	<?php
+    /*
+    if ($success===20) {
+        ajax_comment_err("评论审核中...");
+    }
+    */
 }
 
 /**
