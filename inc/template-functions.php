@@ -29,8 +29,14 @@ function sketchy_body_classes( $classes ) {
 		return $classes;
 	}
 	$dices = 13;
-	$id = get_the_ID()%$dices;
+	$post_id = get_the_ID();
+
+	$id = $post_id % $dices;
 	$classes[] = "bgnum-".$id;
+
+	if (function_exists("apip_get_heweather")) {
+		$classes[] = apip_get_heweather('eng', $post_id);
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'sketchy_body_classes' );
