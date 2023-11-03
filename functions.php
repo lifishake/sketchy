@@ -151,23 +151,32 @@ function sketchy_scripts() {
 		if ( $maincolor ) {
 			$newbg = sketchy_background_color($maincolor);
 			$newmask = sketchy_mask_color($maincolor);
-			$css .= "body { background-color: ".$newbg."; }";
-			$css .= ".site-description { color: ".$maincolor."; }";
-			$css .= ".site-branding { border-color: ".$maincolor.";}";
-			$css .= ".navigation-top { border-color: ".$maincolor.";}";
-			$css .= "#comments { border-color: ".$maincolor.";}";
+			$weathermask = sketchy_mask_color($maincolor, 0.1);
+			//$css .= "body { background-color: ".$newbg."; }";
+			//$css .= ".site-description { color: ".$maincolor."; }";
+			//$css .= ".site-branding { border-color: ".$maincolor.";}";
+			//$css .= ".navigation-top { border-color: ".$maincolor.";}";
+			//$css .= "#comments { border-color: ".$maincolor.";}";
 			$css .= ".comment-reply-link:hover { background-color: ".$newmask."; }";
-			$css .="li.bypostauthor > article > footer > div.comment-metadata > b.author-url, li.bypostauthor > article > footer > div.comment-metadata > b.author-url a { color: ".$maincolor."; }";
-			$css .= "span.mention{ color: ".$maincolor."; }";
-			$css .= ".site-footer,ol.comment-list li:hover, ol.comment-list li:focus { border-color: ".$maincolor."; }";
-			$css .= ".site::after{ background-color: ".$newmask.";}";
+			//$css .="li.bypostauthor > article > footer > div.comment-metadata > b.author-url, li.bypostauthor > article > footer > div.comment-metadata > b.author-url a { color: ".$maincolor."; }";
+			//$css .= "span.mention{ color: ".$maincolor."; }";
+			$css .= "ol.comment-list li:hover, ol.comment-list li:focus { border-color: ".$maincolor."; }";
+			//$css .= ".site::before{ background-color: ".$weathermask.";}";
+			//$css .= ".site::after{ background-color: ".$newmask.";}";
+			$css .= ".entry-content a:hover, .entry-content a:active, .entry-summary a:hover, .entry-summary a:active, .entry-footer a:hover, .entry-footer a:active, .author-url a:hover, .author-url a:active, .widget a:hover, .widget a:active, .site-footer .widget-area a:hover, .site-footer .widget-area a:active, .posts-navigation a:hover, .posts-navigation a:active, .site-info a:hover, .site-info a:active { color:${maincolor}; -webkit-box-shadow: inset 0 -1px 0 ${maincolor}; -box-shadow: inset 0 -1px 0 ${maincolor};}";
+			$css .= ".comment-author a .ziface:hover, .comment-author a .ziface:focus {color:${maincolor};}";
+			$css .= ".related-posts  a:focus , .related-posts  a:hover , .post-navigation a:focus ,	.post-navigation a:hover  { color: ${maincolor}; }";
+			$css .= ".piced-link-window:hover, .piced-link-window:focus{ border-color: ${maincolor}; }";
+			$css .= ".social-navigation a:hover, .social-navigation a:focus {background-color:${maincolor};}";
+			$css .= ".entry-footer .edit-link a.post-edit-link {background-color:${maincolor};}";
+			
 			if (is_single())
 			{
-				$css .= ".single .site-main .post, .blog .site-main .post{ border-color: ".$maincolor.";}";
+				//$css .= ".single .site-main .post, .blog .site-main .post{ border-color: ".$maincolor.";}";
 				$css .= ".sidebar-inline { border-color: ".$maincolor."; }";
 			}
 			else {
-				$css .= ".navigation-top .current_page_item > a {text-shadow: 1px 1px 8px ".$maincolor.";}";
+				//$css .= ".navigation-top .current_page_item > a {text-shadow: 1px 1px 8px ".$maincolor.";}";
 			}			
 		}
 	}
@@ -233,7 +242,7 @@ function sketchy_background_color($refcolor) {
 	return $str;
 }
 
-function sketchy_mask_color($refcolor) {
+function sketchy_mask_color($refcolor, $a=0.85) {
 	$rgbref = hex2rgb($refcolor);
 	$hsvref = rgb2hsv($rgbref);
 	/*v95*/
@@ -250,7 +259,6 @@ function sketchy_mask_color($refcolor) {
 	$rgb = hsv2rgb($hsvref) ;
 	$str = sprintf("#%1$02X%2$02X%3$02X",$rgb[0],$rgb[1],$rgb[2]) ;	
 	*/
-	$a = 0.85;
 	if ($hsvref[2]>=95) {
 		$a = $a - (0.05 * ($hsvref[2] - 94));
 	}
