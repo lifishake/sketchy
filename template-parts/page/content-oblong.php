@@ -11,7 +11,7 @@
  */
 global $page_type;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( "page-no-edge" ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 	<?php
 		the_title( '<h1 class="screen-reader-text">', '</h1>' ); 

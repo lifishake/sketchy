@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 3.9
+Version: 4.0
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,13 +14,6 @@ Text Domain: //github.com/lifishake/sketchy
 
 欢迎所有人修改这款主题并向他人分享你的修改经验。
 再次发布请遵循GPL。
-
-bg:#F7FCF8; 接近彩电灰屏的颜色
-text:#000200; 非常深的墨绿
-阴影、边框：#B2B7B3
-链接：#660000（rust）
-浅边框：#EDEFED
-hover:#B7410E;
 
 */
 
@@ -1404,7 +1397,7 @@ html {
 	left: 0;
 	-webkit-mask-position: top left;
 	mask-position: top left;
-	background-color: rgba(187, 191, 202, 0.1);
+	background-color: rgba(187, 191, 202, 0.12);
 }
 
 .sunny .site,
@@ -1797,7 +1790,9 @@ a.prev.page-numbers:hover {
 	border-radius: 5px;
 }
 .page .site-main .page{
-	background-color:rgba(241, 243, 244, 0.5);
+	background-color:rgba(244,245,248, 0.5);
+	border:2px solid rgba(187, 191, 202, .9);
+	border-radius: 5px;
 }
 
 .page .site-main .page-no-edge {
@@ -2950,11 +2945,13 @@ object {
 
 /*--------------------------------------------------------------*/
 .bddb-gallery-wall {
-	background-color: rgba(244,245,248,.95);
+	/*background-color: rgba(244,245,248,.95);*/
 	box-shadow: 0 0 8px #E8E8E8;
 	z-index:3;
-	display:table-row;
-	padding:0.75em;
+	display: grid;
+	grid-gap: 0.5rem;
+	justify-content: space-between;
+	grid-template-columns: repeat(auto-fill,112px);
 }
 
 .bddb-poster-thumb a img{
