@@ -40,7 +40,7 @@ get_header(); ?>
 					'prev_text' => '&larr;<span class="screen-reader-text">上一页</span>',
 					'next_text' => '<span class="screen-reader-text">下一页</span>&rarr;',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">页</span>',
-					'mid_size' => 4,
+					'mid_size' => 2,
 				) );
 				/*the_posts_navigation();*/
 

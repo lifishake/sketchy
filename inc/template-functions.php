@@ -37,6 +37,9 @@ function sketchy_body_classes( $classes ) {
 	if (function_exists("apip_get_heweather")) {
 		$classes[] = apip_get_heweather('eng', $post_id);
 	}
+	if (has_tag('fc')) {
+		$classes[] = 'tag-fc';
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'sketchy_body_classes' );

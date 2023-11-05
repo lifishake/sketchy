@@ -1397,7 +1397,7 @@ html {
 	left: 0;
 	-webkit-mask-position: top left;
 	mask-position: top left;
-	background-color: rgba(187, 191, 202, 0.12);
+	background-color: rgba(187, 191, 202, 0.2);
 }
 
 .sunny .site,
@@ -1423,6 +1423,11 @@ html {
 	-webkit-mask-image:url(./assets/images/weather/cloudy-high.png);
 }
 
+.tag-fc .site::before{
+	mask-image: url(./assets/images/topic/fc.png);
+	-webkit-mask-image:url(./assets/images/topic/fc.png);
+}
+
 .cloudy .site::before{
 	mask-image: url(./assets/images/weather/cloudy.png);
 	-webkit-mask-image:url(./assets/images/weather/cloudy.png);
@@ -1431,6 +1436,11 @@ html {
 .rain .site::before{
 	mask-image: url(./assets/images/weather/rain.png);
 	-webkit-mask-image:url(./assets/images/weather/rain.png);
+}
+
+.showers .site::before{
+	mask-image: url(./assets/images/weather/showers.png);
+	-webkit-mask-image:url(./assets/images/weather/showers.png);
 }
 
 .heavy-rain .site::before{
