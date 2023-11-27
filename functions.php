@@ -266,11 +266,39 @@ function sketchy_mask_color($refcolor, $a=0.85) {
  * 来源: 自创
  */
 function sketchy_get_ziface($nickyname) {
-if (preg_match("/^[\x{20}-\x{7F}][\x{20}-\x{7F}].*$/u", $nickyname)) {
+	$ascii_len = strlen($nickyname);
+	$mb_len = mb_strlen($nickyname, 'utf-8');
+	
+	if ($ascii_len == $mb_len) {
+		//全英文，取第一个字母，转大写
 		$zi=strtoupper(mb_substr($nickyname, 0, 1, 'utf-8'));
-	}
-	else {
-		$zi=mb_substr($nickyname, 0, 1, 'utf-8');
+	} else {
+		$n1 = str_replace(array("博客","故事","记忆"), "", $nickyname);
+		preg_match_all("/[\x{4e00}-\x{9fa5}]/u", $n1, $match);
+		$chinese = $match[0];
+		$len = count($chinese);
+		switch ($len) {
+			case 0:
+				$zi=strtoupper(mb_substr($nickyname, 0, 1, 'utf-8'));
+				break;
+			case 1:	
+			case 2:
+				$zi=strtoupper($chinese[$len - 1]);
+				break;
+			case 3:
+				$zi=strtoupper($chinese[0]);
+				break;
+			case 4:
+				$zi=strtoupper($chinese[$len - 2]);
+				break;
+			case 5:
+			case 6:
+				$zi=strtoupper($chinese[$len - 3]);
+				break;
+			default:
+				$zi=strtoupper($chinese[$len - 1]);
+				break;
+		}
 	}
 	return '<span class="ziface">'.$zi.'</span>';
 }
