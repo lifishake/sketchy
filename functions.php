@@ -146,7 +146,8 @@ function sketchy_scripts() {
 		if ( $maincolor ) {
 			$newbg = sketchy_background_color($maincolor);
 			$newmask = sketchy_mask_color($maincolor);
-			$weathermask = sketchy_mask_color($maincolor, 0.1);
+			$weathermask0 = sketchy_mask_color($maincolor, 0.4);
+			$weathermask1 = sketchy_mask_color($maincolor, 0.1);
 			//$css .= "body { background-color: ".$newbg."; }";
 			//$css .= ".site-description { color: ".$maincolor."; }";
 			//$css .= ".site-branding { border-color: ".$maincolor.";}";
@@ -156,14 +157,14 @@ function sketchy_scripts() {
 			//$css .="li.bypostauthor > article > footer > div.comment-metadata > b.author-url, li.bypostauthor > article > footer > div.comment-metadata > b.author-url a { color: ".$maincolor."; }";
 			//$css .= "span.mention{ color: ".$maincolor."; }";
 			$css .= "ol.comment-list li:hover, ol.comment-list li:focus { border-color: ".$maincolor."; }";
-			//$css .= ".site::before{ background-color: ".$weathermask.";}";
+			//$css .= ".site::before { background-image: linear-gradient(124deg, ".$weathermask0." 28%, ".$weathermask1." 63%, rgba(0,0,0,0));}";
 			//$css .= ".site::after{ background-color: ".$newmask.";}";
 			$css .= ".entry-content a:hover, .entry-content a:active, .entry-summary a:hover, .entry-summary a:active, .entry-footer a:hover, .entry-footer a:active, .author-url a:hover, .author-url a:active, .widget a:hover, .widget a:active, .site-footer .widget-area a:hover, .site-footer .widget-area a:active, .posts-navigation a:hover, .posts-navigation a:active, .site-info a:hover, .site-info a:active { color:${maincolor}; -webkit-box-shadow: inset 0 -1px 0 ${maincolor}; -box-shadow: inset 0 -1px 0 ${maincolor};}";
-			$css .= ".comment-author a .ziface:hover, .comment-author a .ziface:focus {color:${maincolor};}";
-			$css .= ".related-posts  a:focus , .related-posts  a:hover , .post-navigation a:focus ,	.post-navigation a:hover  { color: ${maincolor}; }";
-			$css .= ".piced-link-window:hover, .piced-link-window:focus{ border-color: ${maincolor}; }";
-			$css .= ".social-navigation a:hover, .social-navigation a:focus {background-color:${maincolor};}";
-			$css .= ".entry-footer .edit-link a.post-edit-link {background-color:${maincolor};}";
+			$css .= ".comment-author a .ziface:hover, .comment-author a .ziface:focus {color:".$maincolor.";}";
+			$css .= ".related-posts  a:focus , .related-posts  a:hover , .post-navigation a:focus ,	.post-navigation a:hover  { color: ".$maincolor."; }";
+			$css .= ".piced-link-window:hover, .piced-link-window:focus{ border-color:".$maincolor."; }";
+			$css .= ".social-navigation a:hover, .social-navigation a:focus {background-color:".$maincolor.";}";
+			$css .= ".entry-footer .edit-link a.post-edit-link {background-color:".$maincolor.";}";
 			
 			if (is_single())
 			{
