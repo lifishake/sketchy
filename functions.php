@@ -274,7 +274,7 @@ function sketchy_get_ziface($nickyname) {
 		//全英文，取第一个字母，转大写
 		$zi=strtoupper(mb_substr($nickyname, 0, 1, 'utf-8'));
 	} else {
-		$n1 = str_replace(array("博客","故事","记忆"), "", $nickyname);
+		$n1 = str_replace(array("博客","故事","记忆","的"), "", $nickyname);
 		preg_match_all("/[\x{4e00}-\x{9fa5}]/u", $n1, $match);
 		$chinese = $match[0];
 		$len = count($chinese);

@@ -35,10 +35,23 @@ function sketchy_body_classes( $classes ) {
 	$classes[] = "bgnum-".$id;
 
 	if (function_exists("apip_get_heweather")) {
-		$classes[] = apip_get_heweather('eng', $post_id);
+		$classes[] = 'weather-'.apip_get_heweather('eng', $post_id);
 	}
-	if (has_tag('fc')) {
-		$classes[] = 'tag-fc';
+	if (has_category('relisten_moring_songs')) {
+		$classes[] = 'cat-relisten-moring-songs';
+	}
+
+	if (has_tag('old-and-old')) {
+		$classes[] = 'tag-old-and-old';
+	}
+	else if (has_tag('dream')) {
+		$classes[] = 'tag-dream';
+	}
+	else if (has_tag('fc')) {
+		$classes[] = 'tag-sig-fc';
+	}
+	else if (has_tag('dalian')) {
+		$classes[] = 'tag-sig-dalian';
 	}
 	return $classes;
 }
