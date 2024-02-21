@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 4.4
+Version: 4.5
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1406,11 +1406,6 @@ html {
 	background-image: none;
 }
 
-[class *='tag-sig-' ]  .site::before{
-	-webkit-mask-repeat: no-repeat no-repeat;
-    mask-repeat: no-repeat no-repeat;
-}
-
 /*level 0*/
 .weather-sunny .site::before{
 	mask-image: url(./assets/images/weather/sunny.png);
@@ -1421,71 +1416,105 @@ html {
 .tag-sig-fc .site::before{
 	mask-image: url(./assets/images/topic/fc.png);
 	-webkit-mask-image:url(./assets/images/topic/fc.png);
+	-webkit-mask-repeat: no-repeat no-repeat;
+    mask-repeat: no-repeat no-repeat;
 	
 }
 
 .tag-sig-dalian .site::before{
 	mask-image: url(./assets/images/topic/dalian.png);
 	-webkit-mask-image:url(./assets/images/topic/dalian.png);
+	-webkit-mask-repeat: no-repeat no-repeat;
+    mask-repeat: no-repeat no-repeat;
 }
 
 /*level 2*/
 .weather-cloudy-high .site::before{
 	mask-image: url(./assets/images/weather/cloudy-high.png);
 	-webkit-mask-image:url(./assets/images/weather/cloudy-high.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 .weather-cloudy .site::before{
 	mask-image: url(./assets/images/weather/cloudy.png);
 	-webkit-mask-image:url(./assets/images/weather/cloudy.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 /*level 3*/
 .cat-relisten-moring-songs .site::before{
 	mask-image: url(./assets/images/topic/relisten-moring-songs.png);
 	-webkit-mask-image:url(./assets/images/topic/relisten-moring-songs.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 .weather-rain .site::before{
 	mask-image: url(./assets/images/weather/rain.png);
 	-webkit-mask-image:url(./assets/images/weather/rain.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 /*level 4*/
 .weather-snow .site::before{
 	mask-image: url(./assets/images/weather/snow.png);
 	-webkit-mask-image:url(./assets/images/weather/snow.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 .weather-showers .site::before{
 	mask-image: url(./assets/images/weather/showers.png);
 	-webkit-mask-image:url(./assets/images/weather/showers.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 .weather-heavy-rain .site::before{
 	mask-image: url(./assets/images/weather/heavy-rain.png);
 	-webkit-mask-image:url(./assets/images/weather/heavy-rain.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 /*level 5*/
 .weather-fog .site::before{
 	mask-image: url(./assets/images/weather/fog.png);
 	-webkit-mask-image:url(./assets/images/weather/fog.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 .weather-sleet .site::before{
 	mask-image: url(./assets/images/weather/sleet.png);
 	-webkit-mask-image:url(./assets/images/weather/sleet.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 .weather-smog .site::before{
 	mask-image: url(./assets/images/weather/smog.png);
 	-webkit-mask-image:url(./assets/images/weather/smog.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 }
 
 .weather-dust .site::before{
 	mask-image: url(./assets/images/weather/smog.png);
 	-webkit-mask-image:url(./assets/images/weather/smog.png);
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
+}
+
+/*level 6*/
+.day-latern .site::before{
+	mask-image: url(./assets/images/day/latern.png);
+	-webkit-mask-image:url(./assets/images/day/latern.png);
+	-webkit-mask-repeat: repeat no-repeat;
+    mask-repeat: repeat no-repeat;
 }
 
 .site::after{
