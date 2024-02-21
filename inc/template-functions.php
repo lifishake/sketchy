@@ -53,6 +53,12 @@ function sketchy_body_classes( $classes ) {
 	else if (has_tag('dalian')) {
 		$classes[] = 'tag-sig-dalian';
 	}
+
+	$str_festival = apip_festival($post_id);
+	if (false != strstr($str_festival, "元宵节")) {
+		$classes[] = 'day-latern';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'sketchy_body_classes' );
