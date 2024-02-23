@@ -54,10 +54,19 @@ function sketchy_body_classes( $classes ) {
 		$classes[] = 'tag-sig-dalian';
 	}
 
-	$str_festival = apip_festival($post_id);
-	if (false != strstr($str_festival, "元宵节")) {
-		$classes[] = 'day-latern';
+	if (function_exists('apip_festival')) {
+		$str_festival = apip_festival($post_id);
+		if (false != strstr($str_festival, "元宵节")) {
+			$classes[] = 'day-latern';
+		}
+		else if (false != strstr($str_festival, "耶诞节")) {
+			$classes[] = 'day-xmas';
+		}
+		else if (!empty($str_festival)) {
+			$classes[] = 'day-theday';
+		}
 	}
+	
 
 	return $classes;
 }
