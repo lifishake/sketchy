@@ -105,7 +105,7 @@ function sketchy_additional_comment_show( $comment ) {
                     $comment->comment_author_url,
                     $comment->comment_date,
                     $comment->comment_content,
-                    ($success===20)?"</br><p>检测到首次留言，评论审核中...</p>":(($success===10)?"</br><p><em><b>博主看你发广告太辛苦，替你换了个昵称。</br>惊不惊喜，意不意外？</b></em></p>":""),
+                    ($success===20)?"</br><p>检测到首次留言，评论审核中...</p>":(($success===10)?"</br><p><em><b>博主看你发广告太辛苦，替你换了个昵称。</br>惊不惊喜，意不意外？</b></em></p>":"")
                 );
     $resp['result']=$success;
     $resp['body']=$body;
