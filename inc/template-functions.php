@@ -34,6 +34,14 @@ function sketchy_body_classes( $classes ) {
 	$id = $post_id % $dices;
 	$classes[] = "bgnum-".$id;
 
+	$folder = get_template_directory();
+	if (file_exists($folder."/pewae-local.php")) {
+		include_once($folder."/pewae-local.php");
+		if (function_exists('get_sketchy_local_post_bg')) {
+			$add_class = get_sketchy_local_post_bg();
+		}
+	}
+
 	if (function_exists("apip_get_heweather")) {
 		$classes[] = 'weather-'.apip_get_heweather('eng', $post_id);
 	}
@@ -48,7 +56,7 @@ function sketchy_body_classes( $classes ) {
 		$classes[] = 'tag-dream';
 	}
 	else if (has_tag('fc')) {
-		$classes[] = 'tag-sig-fc';
+		$classes[] = 'tag-fc';
 	}
 	else if (has_tag('dalian')) {
 		$classes[] = 'tag-sig-dalian';

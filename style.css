@@ -1382,8 +1382,7 @@ html {
     background: url(./assets/images/header.jpg) left top no-repeat;
 }
 
-.site-content-contain
-{
+.site-content-contain {
     background: transparent;
 }
 
@@ -1413,11 +1412,11 @@ html {
 }
 
 /*level 1*/
-.tag-sig-fc .site::before{
+.tag-fc .site::before{
 	mask-image: url(./assets/images/topic/fc.png);
 	-webkit-mask-image:url(./assets/images/topic/fc.png);
-	-webkit-mask-repeat: no-repeat no-repeat;
-    mask-repeat: no-repeat no-repeat;
+	-webkit-mask-repeat: repeat repeat;
+    mask-repeat: repeat repeat;
 	
 }
 
