@@ -34,14 +34,6 @@ function sketchy_body_classes( $classes ) {
 	$id = $post_id % $dices;
 	$classes[] = "bgnum-".$id;
 
-	$folder = get_template_directory();
-	if (file_exists($folder."/pewae-local.php")) {
-		include_once($folder."/pewae-local.php");
-		if (function_exists('get_sketchy_local_post_bg')) {
-			$add_class = get_sketchy_local_post_bg();
-		}
-	}
-
 	if (function_exists("apip_get_heweather")) {
 		$classes[] = 'weather-'.apip_get_heweather('eng', $post_id);
 	}
@@ -185,12 +177,27 @@ function  sketchy_add_single_inline_css() {
 	foreach ($got_ids as $id){
 		$picid = get_post_thumbnail_id($id);
 		$maincolor = get_post_meta($picid, "apip_main_color", true);
+		if (empty($maincolor)) {
+			continue;
+		}
 		$addi_class = "nav-id-".$id;
 		$css .= " .".$addi_class."{border-color: {$maincolor};}";
 	}
 
+	$folder = get_template_directory();
+	if (file_exists($folder."/inc/pewae-local.php")) {
+		include_once($folder."/inc/pewae-local.php");
+		if (function_exists('get_sketchy_local_post_bg')) {
+			$css = get_sketchy_local_post_bg(get_the_ID(), $css);
+		}
+	} else {
+		$css .= sprintf('.site::before{ mask-image: url(%1$s/assets/images/common.png); -webkit-mask-image:url(%1$s/assets/images/common.png);}',
+							get_template_directory_uri()
+						);
+	}
+
 	if (""!=$css) {
-	wp_add_inline_style('sketchy-style', $css);  
+		wp_add_inline_style('sketchy-style', $css);  
 	}
 }
-add_action( 'wp_enqueue_scripts', 'sketchy_add_single_inline_css',20 );
+add_action( 'wp_enqueue_scripts', 'sketchy_add_single_inline_css', 20);
