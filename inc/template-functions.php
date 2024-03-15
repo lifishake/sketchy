@@ -188,12 +188,22 @@ function  sketchy_add_single_inline_css() {
 	if (file_exists($folder."/inc/pewae-local.php")) {
 		include_once($folder."/inc/pewae-local.php");
 		if (function_exists('get_sketchy_local_post_bg')) {
-			$css = get_sketchy_local_post_bg(get_the_ID(), $css);
+			$css .= get_sketchy_local_post_bg(get_the_ID(), $css);
 		}
 	} else {
 		$css .= sprintf('.site::before{ mask-image: url(%1$s/assets/images/common.png); -webkit-mask-image:url(%1$s/assets/images/common.png);}',
-							get_template_directory_uri()
-						);
+							get_template_directory_uri());
+	}
+
+	if (function_exists('apip_get_real_post_id')) {
+		$real_id = apip_get_real_post_id();
+		if ($real_id > 0) {
+			$parts = 13;
+			$devide_id = $real_id % $parts;
+			$css .= sprintf('.site::after{ mask-image: url(%1$s/assets/images/background-%2$d.png); -webkit-mask-image:url(%1$s/assets/images/background-%2$d.png);}',
+								get_template_directory_uri(),
+								$devide_id );
+		}
 	}
 
 	if (""!=$css) {
