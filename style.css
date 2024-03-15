@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 4.7
+Version: 4.8
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1435,76 +1435,6 @@ html {
 .archive .site::after{
 	-webkit-mask-image:url(./assets/images/background-archive.png);
 	mask-image: url(./assets/images/background-archive.png)  ;
-}
-
-.bgnum-0 .site::after{
-	-webkit-mask-image:url(./assets/images/background-0.png);
-	mask-image: url(./assets/images/background-0.png)  ;
-}
-
-.bgnum-1 .site::after{
-	-webkit-mask-image:url(./assets/images/background-1.png);
-	mask-image: url(./assets/images/background-1.png)  ;
-}
-
-.bgnum-2 .site::after{
-	-webkit-mask-image:url(./assets/images/background-2.png);
-	mask-image: url(./assets/images/background-2.png)  ;
-}
-
-.bgnum-3 .site::after{
-	-webkit-mask-image:url(./assets/images/background-3.png);
-	mask-image: url(./assets/images/background-3.png)  ;
-}
-
-.bgnum-4 .site::after{
-	-webkit-mask-image:url(./assets/images/background-4.png);
-	mask-image: url(./assets/images/background-4.png)  ;
-}
-
-.bgnum-5 .site::after{
-	-webkit-mask-image:url(./assets/images/background-5.png);
-	mask-image: url(./assets/images/background-5.png)  ;
-}
-
-.bgnum-6 .site::after{
-	-webkit-mask-image:url(./assets/images/background-6.png);
-	mask-image: url(./assets/images/background-6.png)  ;
-}
-
-.bgnum-7 .site::after{
-	-webkit-mask-image:url(./assets/images/background-7.png);
-	mask-image: url(./assets/images/background-7.png)  ;
-}
-
-.bgnum-8 .site::after{
-	-webkit-mask-image:url(./assets/images/background-8.png);
-	mask-image: url(./assets/images/background-8.png)  ;
-}
-
-.bgnum-9 .site::after{
-	-webkit-mask-image:url(./assets/images/background-9.png);
-	mask-image: url(./assets/images/background-9.png)  ;
-}
-
-.bgnum-10 .site::after{
-	-webkit-mask-image:url(./assets/images/background-10.png);
-	mask-image: url(./assets/images/background-10.png)  ;
-}
-
-.bgnum-11 .site::after{
-	-webkit-mask-image:url(./assets/images/background-11.png);
-	mask-image: url(./assets/images/background-11.png)  ;
-}
-
-.bgnum-12 .site::after{
-	-webkit-mask-image:url(./assets/images/background-12.png);
-	mask-image: url(./assets/images/background-12.png)  ;
-}
-
-.bgnum-13 .site::after{
-	-webkit-mask-image:url(./assets/images/background-13.png);
-	mask-image: url(./assets/images/background-13.png)  ;
 }
 
 .site-content {
@@ -2937,6 +2867,12 @@ object {
 	}
 }
 
+@media screen and (max-width:30em) {
+	.site::before{
+		background-image:none;
+	}
+}
+
 /*480*/
 @media screen and (min-width: 30em) {
 
@@ -3285,22 +3221,22 @@ object {
 	}
 	/* Scroll down arrow */
 
-.site-header .menu-scroll-up {
-	padding: 1em;
-	margin: auto;
-	right: 0;
-}
+	.site-header .menu-scroll-up {
+		padding: 1em;
+		margin: auto;
+		right: 0;
+	}
 
-.menu-scroll-up,
-.menu-scroll-up:hover,
-.menu-scroll-up:focus {
-	background-color: transparent;
-}
+	.menu-scroll-up,
+	.menu-scroll-up:hover,
+	.menu-scroll-up:focus {
+		background-color: transparent;
+	}
 
-.menu-scroll-up .icon {
-	height: 18px;
-	width: 18px;
-}
+	.menu-scroll-up .icon {
+		height: 18px;
+		width: 18px;
+	}
 
 	/* Front Page */
 
