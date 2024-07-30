@@ -24,7 +24,20 @@
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
+		$type = "";
+		$folder = get_template_directory();
+		if (file_exists($folder."/inc/pewae-local.php")) {
+			include_once($folder."/inc/pewae-local.php");
+		}
+		if (function_exists('get_sketchy_local_bddb_gallerypage_type')) {
+			$type = get_sketchy_local_bddb_gallerypage_type();
+		}
+		if (!empty($type) && function_exists('bddb_the_gallery')) {
+			bddb_the_gallery($type);
+		}
+		else {
 			the_content();
+		}
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
