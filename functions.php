@@ -268,6 +268,10 @@ function sketchy_mask_color($refcolor, $a=0.85) {
  * 来源: 自创
  */
 function sketchy_get_ziface($nickyname) {
+
+	if("关键字【彪】" == $nickyname) {
+		return '<span class="ziface">彪</span>';
+	}
 	$ascii_len = strlen($nickyname);
 	$mb_len = mb_strlen($nickyname, 'utf-8');
 	
@@ -275,7 +279,15 @@ function sketchy_get_ziface($nickyname) {
 		//全英文，取第一个字母，转大写
 		$zi=strtoupper(mb_substr($nickyname, 0, 1, 'utf-8'));
 	} else {
-		$n1 = str_replace(array("博客","故事","记忆","的","先生","同学","小姐"), "", $nickyname);
+		$n1 = str_replace(array("博客","故事","日志","记忆","的","先生","同学","小姐","大叔","小子","夫子","网友","生活",".","の","Mr","Mr.","Miss","先森","在","博士","公社","个人","游子","记录","路人","太郎","联盟","山人","之"), "", $nickyname);
+		$first_str = mb_substr($n1, 0, 1, 'utf-8');
+		if(in_array($first_str, array("大","小","老","后","阿"))) {
+			$n1 = str_replace($first_str, "", $n1);
+		}
+		$last_str = mb_substr($n1, -1, NULL, 'utf-8');
+		if(in_array($last_str, array("人","儿","子","生","哥","弟","妹","姐","爸","妈","叔","伯","爷","网","社","说","志","园","吧","记","客","团","徒"))) {
+			$n1 = str_replace($last_str, "", $n1);
+		}
 		preg_match_all("/[\x{4e00}-\x{9fa5}]/u", $n1, $match);
 		$chinese = $match[0];
 		$len = count($chinese);
@@ -285,10 +297,8 @@ function sketchy_get_ziface($nickyname) {
 				break;
 			case 1:	
 			case 2:
-				$zi=strtoupper($chinese[$len - 1]);
-				break;
 			case 3:
-				$zi=strtoupper($chinese[0]);
+				$zi=strtoupper($chinese[$len - 1]);
 				break;
 			case 4:
 				$zi=strtoupper($chinese[$len - 2]);
