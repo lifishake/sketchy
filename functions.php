@@ -100,7 +100,7 @@ add_action( 'wp_head', 'sketchy_javascript_detection', 0 );
 function sketchy_scripts() {
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20231105');
+	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20250415');
 
 	wp_enqueue_script( 'sketchy-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
