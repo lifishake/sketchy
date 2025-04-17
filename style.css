@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 6.0
+Version: 6.2
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -71,6 +71,7 @@ fonts.geekzu.org
 /*
 @import url('https://fonts.cdnfonts.com/css/kaisei-opti');
 @import url('https://fonts.cdnfonts.com/css/liu-jian-mao-cao');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 */
 /*
 Kaisei Opti
@@ -79,53 +80,14 @@ Long Cang
 */
 /* @import url("https://fontsapi.zeoseven.com/467/main/result.css");
 @import url("https://fontsapi.zeoseven.com/306/main/result.css");
+@import url("https://fontsapi.zeoseven.com/83/main/result.css");
+https://fonts.font.im/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap
 */
 
-@import url("https://fontsapi.zeoseven.com/83/main/result.css");
-
-/* long-cang-regular */
-/* noto-sans-sc-regular */
-@font-face {
-	font-family: 'Noto Sans SC';
-	font-style: normal;
-	font-weight: regular;
-	src: url('//lib.baomitu.com/fonts/noto-sans-sc/noto-sans-sc-regular.eot'); /* IE9 Compat Modes */
-	src: local('Noto Sans SC'), local('NotoSans SC-Normal'),
-		 url('//lib.baomitu.com/fonts/noto-sans-sc/noto-sans-sc-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		 url('//lib.baomitu.com/fonts/noto-sans-sc/noto-sans-sc-regular.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('//lib.baomitu.com/fonts/noto-sans-sc/noto-sans-sc-regular.woff') format('woff'), /* Modern Browsers */
-		 url('//lib.baomitu.com/fonts/noto-sans-sc/noto-sans-sc-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		 url('//lib.baomitu.com/fonts/noto-sans-sc/noto-sans-sc-regular.svg#NotoSans SC') format('svg'); /* Legacy iOS */
-	font-display: swap;
-  }
+@import url('https://fonts.font.im/css2?family=Meddon&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
 
 /* lavishly-yours-regular */
-@font-face {
-	font-family: 'Lavishly Yours';
-	font-style: normal;
-	font-weight: regular;
-	src: url('//lib.baomitu.com/fonts/lavishly-yours/lavishly-yours-regular.eot'); /* IE9 Compat Modes */
-	src: local('Lavishly Yours'), local('LavishlyYours-Normal'),
-		 url('//lib.baomitu.com/fonts/lavishly-yours/lavishly-yours-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		 url('//lib.baomitu.com/fonts/lavishly-yours/lavishly-yours-regular.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('//lib.baomitu.com/fonts/lavishly-yours/lavishly-yours-regular.woff') format('woff'), /* Modern Browsers */
-		 url('//lib.baomitu.com/fonts/lavishly-yours/lavishly-yours-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		 url('//lib.baomitu.com/fonts/lavishly-yours/lavishly-yours-regular.svg#LavishlyYours') format('svg'); /* Legacy iOS */
-  }
-	
-@font-face {
-	font-family: 'Long Cang';
-	font-style: normal;
-	font-weight: regular;
-	src: url('//lib.baomitu.com/fonts/long-cang/long-cang-regular.eot'); /* IE9 Compat Modes */
-	src: local('Long Cang'), local('LongCang-Normal'),
-		 url('//lib.baomitu.com/fonts/long-cang/long-cang-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		 url('//lib.baomitu.com/fonts/long-cang/long-cang-regular.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('//lib.baomitu.com/fonts/long-cang/long-cang-regular.woff') format('woff'), /* Modern Browsers */
-		 url('//lib.baomitu.com/fonts/long-cang/long-cang-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		 url('//lib.baomitu.com/fonts/long-cang/long-cang-regular.svg#LongCang') format('svg'); /* Legacy iOS */
-	font-display: swap;
-  }
+
 
 @font-face{
   font-family:'pwe2019';	/*自定义字体名字*/
@@ -141,8 +103,13 @@ Long Cang
 }
 
 html {
-	font-family: Helvetica, Tahoma, Arial, "Chill Round Gothic", "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	line-height: 1.15;
+	font-weight: normal;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-variation-settings:
+	  "wdth" 100;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
@@ -150,7 +117,6 @@ html {
 body {
 	margin: 0;
     background-color: #DEE2E5;
-	font-weight: normal;
 	/*background-image: url(./assets/images/kirby2.png);
 	background-repeat: repeat-x, repeat-y;
     background-position: center left, center right;
@@ -561,9 +527,9 @@ input,
 select,
 textarea {
 	color: #0b1013;
-	font-size: 16px;
-	font-size: 1rem;
-	font-weight: normal;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	font-weight: 400;
 	line-height: 1.66;
 }
 
@@ -1357,7 +1323,7 @@ html {
 }
 
 .site-description {
-    font-family: pwe2019, Helvetica, Tahoma, Arial,"Chill Round Gothic", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: pwe2019, Helvetica, Tahoma, Arial, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-bottom: 0;
@@ -1500,7 +1466,7 @@ html {
 }
 
 .entry-title {
-	font-family: 'Liu Jian Mao Cao', Helvetica, Tahoma, Arial, "Chill Round Gothic", "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: 'Liu Jian Mao Cao', Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .page-title,
@@ -1600,7 +1566,7 @@ span .festival {
 }
 
 .nav-links {
-	font-family:pwe2019, Helvetica, Tahoma, Arial,"Chill Round Gothic", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family:pwe2019, Helvetica, Tahoma, Arial, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .nav-links a.page-numbers {
@@ -1940,7 +1906,7 @@ span.license-cc a:first-child {
 
 h2.related-post-title {
 	text-align: center;
-	font-family: Helvetica, Tahoma, Arial, "Chill Round Gothic", "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .related-posts {
@@ -1991,7 +1957,7 @@ h2.related-post-title {
 
 .piced-link-window a,
 .piced-link-window span {
-	font-family:Helvetica, Tahoma, Arial,"Chill Round Gothic", "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     overflow: hidden;
     line-height: 1.7em;
     white-space: nowrap;
@@ -2350,7 +2316,7 @@ ol.comment-list  li.depth-1 {
 	opacity: 1.0;
 	display: block;
 	font-size: 3.75rem;
-	font-family: 'Lavishly Yours', 'Long Cang', 'HGSGyoshotai';
+	font-family: Meddon, 'Long Cang', 'Slackside One';
 	float: left;
 	width:4rem;
 	line-height: 4rem;
@@ -2422,8 +2388,8 @@ ol.comment-list  li.depth-1 {
 
 .comment-body {
 	color: #2F3540;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 	margin-bottom: 0.5em;
 	min-height: 3rem;
 }
@@ -2596,7 +2562,7 @@ h2.widget-title {
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
     color: #2F3540;
-	font-family:Helvetica, Tahoma, Arial,"Chill Round Gothic", "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .widget-title a {
@@ -3018,8 +2984,8 @@ object {
 	input,
 	select,
 	textarea {
-		font-size: 18px;
-		font-size: 1.125rem;
+		font-size: 16px;
+		font-size: 1rem;
 		line-height: 1.7;
 	}
 
