@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 6.2
+Version: 6.3
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -84,7 +84,7 @@ Long Cang
 https://fonts.font.im/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap
 */
 
-@import url('https://fonts.font.im/css2?family=Meddon&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
+@import url('https://fonts.font.im/css2?family=Lovers+Quarrel&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
 
 /* lavishly-yours-regular */
 
@@ -2316,7 +2316,7 @@ ol.comment-list  li.depth-1 {
 	opacity: 1.0;
 	display: block;
 	font-size: 3.75rem;
-	font-family: Meddon, 'Long Cang', 'Slackside One';
+	font-family: 'Lovers Quarrel', 'Long Cang', 'Slackside One';
 	float: left;
 	width:4rem;
 	line-height: 4rem;
