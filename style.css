@@ -84,7 +84,7 @@ Long Cang
 https://fonts.font.im/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap
 */
 
-@import url('https://fonts.font.im/css2?family=Lovers+Quarrel&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
+@import url('https://fonts.font.im/css2?family=Grechen+Fuemen&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
 
 /* lavishly-yours-regular */
 
@@ -2316,7 +2316,7 @@ ol.comment-list  li.depth-1 {
 	opacity: 1.0;
 	display: block;
 	font-size: 3.75rem;
-	font-family: 'Lovers Quarrel', 'Long Cang', 'Slackside One';
+	font-family: 'Grechen Fuemen', 'Long Cang', 'Slackside One';
 	float: left;
 	width:4rem;
 	line-height: 4rem;
