@@ -81,10 +81,15 @@ Long Cang
 /* @import url("https://fontsapi.zeoseven.com/467/main/result.css");
 @import url("https://fontsapi.zeoseven.com/306/main/result.css");
 @import url("https://fontsapi.zeoseven.com/83/main/result.css");
+@import url("https://fontsapi.zeoseven.com/320/main/result.css");
+@import url("https://fontsapi.zeoseven.com/363/main/result.css");
+@import url("https://fontsapi.zeoseven.com/97/main/result.css");
+@import url("https://fontsapi.zeoseven.com/320/main/result.css");
 https://fonts.font.im/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap
 */
 
-@import url('https://fonts.font.im/css2?family=Grechen+Fuemen&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
+@import url('https://api.fonts.coollabs.io/css2?family=Grechen+Fuemen&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
+@import url("https://fontsapi.zeoseven.com/97/main/result.css");
 
 /* lavishly-yours-regular */
 
@@ -1466,7 +1471,7 @@ html {
 }
 
 .entry-title {
-	font-family: 'Liu Jian Mao Cao', Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: 'MDMD-WuFengTi','Liu Jian Mao Cao', Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .page-title,
