@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 6.4
+Version: 6.5
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -87,7 +87,8 @@ Long Cang
 @import url("https://fontsapi.zeoseven.com/320/main/result.css");
 https://fonts.font.im/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap
 */
-@import url("https://fontsapi.zeoseven.com/97/main/result.css");
+/* @import url("https://fontsapi.zeoseven.com/97/main/result.css"); */
+@import url("./assets/fonts/MDWuFengTi/MDWuFengTi.css");
 @import url('https://fonts.font.im/css2?family=Grechen+Fuemen&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
 
 
@@ -96,12 +97,8 @@ https://fonts.font.im/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&disp
 
 @font-face{
   font-family:'pwe2019';	/*自定义字体名字*/
-  src: url('./assets/fonts/pwe2019.eot');	/*IE9.0+*/
-  src: url('./assets/fonts/pwe2019.eot?#iefix') format('embedded-opentype'),/*IE6-8*/
-  url('./assets/fonts/pwe2019.woff2') format('woff2'),/*???*/
-  url('./assets/fonts/pwe2019.woff?') format('woff'),/*大多数*/
-  url('./assets/fonts/pwe2019.ttf') format('truetype'), /*Safari, Android, iOS*/
-  url('./assets/fonts/pwe2019.svg') format('svg'); /*少数浏览器*/
+  src: url('./assets/fonts/pwe2019.woff2') format('woff2'),/*???*/
+       url('./assets/fonts/pwe2019.woff?') format('woff'); /*少数浏览器*/
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -1471,7 +1468,7 @@ html {
 }
 
 .entry-title {
-	font-family: 'MDMD-WuFengTi','Liu Jian Mao Cao', Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: 'MDMD-WuFengTi', Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .page-title,

@@ -78,8 +78,9 @@ add_filter( 'body_class', 'sketchy_body_classes' );
 * 参数: $type 缩略图种类。目前有两种：sketchy-featured-image是题头图片，sketchy-related是相关小size的图片。
 */
 function sketchy_get_thumbnail_str($ID = "",$type="sketchy-featured-image") {
-    if ( !is_singular() )
+    if ( !is_singular() ) {
 		return '';
+	}
 	$thumbnail = "";
     if ( has_post_thumbnail($ID) ) :
         $post_image_id = get_post_thumbnail_id($ID);
@@ -87,9 +88,9 @@ function sketchy_get_thumbnail_str($ID = "",$type="sketchy-featured-image") {
         {
             $thumbnails = wp_get_attachment_image_src( $post_image_id, $type, false);
             if ($thumbnails) (string)$thumbnail = $thumbnails[0];
+			$thumbnail = str_replace( get_bloginfo('url')."\/wp-content\/", "../../", $thumbnail);
 		}
 	endif;
-    $thumbnails = str_replace( get_bloginfo('url')."/wp_content", "../../", $thumbnails);
     return $thumbnail;
 }
 

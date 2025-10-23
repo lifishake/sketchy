@@ -100,7 +100,7 @@ add_action( 'wp_head', 'sketchy_javascript_detection', 0 );
 function sketchy_scripts() {
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20250419');
+	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20251023');
 
 	wp_enqueue_script( 'sketchy-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
@@ -160,7 +160,7 @@ function sketchy_scripts() {
 			$css .= "ol.comment-list li:hover, ol.comment-list li:focus { border-color: ".$maincolor."; }";
 			//$css .= ".site::before { background-image: linear-gradient(124deg, ".$weathermask0." 28%, ".$weathermask1." 63%, rgba(0,0,0,0));}";
 			//$css .= ".site::after{ background-color: ".$newmask.";}";
-			$css .= ".entry-content a:hover, .entry-content a:active, .entry-summary a:hover, .entry-summary a:active, .entry-footer a:hover, .entry-footer a:active, .author-url a:hover, .author-url a:active, .widget a:hover, .widget a:active, .site-footer .widget-area a:hover, .site-footer .widget-area a:active, .posts-navigation a:hover, .posts-navigation a:active, .site-info a:hover, .site-info a:active { color:${maincolor}; -webkit-box-shadow: inset 0 -1px 0 ${maincolor}; -box-shadow: inset 0 -1px 0 ${maincolor};}";
+			$css .= ".entry-content a:hover, .entry-content a:active, .entry-summary a:hover, .entry-summary a:active, .entry-footer a:hover, .entry-footer a:active, .author-url a:hover, .author-url a:active, .widget a:hover, .widget a:active, .site-footer .widget-area a:hover, .site-footer .widget-area a:active, .posts-navigation a:hover, .posts-navigation a:active, .site-info a:hover, .site-info a:active { color:{$maincolor}; -webkit-box-shadow: inset 0 -1px 0 {$maincolor}; -box-shadow: inset 0 -1px 0 {$maincolor};}";
 			$css .= ".comment-author a .ziface:hover, .comment-author a .ziface:focus {color:".$maincolor.";}";
 			$css .= ".related-posts  a:focus , .related-posts  a:hover , .post-navigation a:focus ,	.post-navigation a:hover  { color: ".$maincolor."; }";
 			$css .= ".piced-link-window:hover, .piced-link-window:focus{ border-color:".$maincolor."; }";

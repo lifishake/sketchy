@@ -13,8 +13,8 @@
     $formated_str_no_link = '<div class="piced-link-window %2$s"><span>没有了</span><p class="nav-suffix">%1$s</p></div>';
     $thumbnail_id = NULL;
     $bg_str = "";
-    if (isset($_SESSION['last_tax'])&&!empty($_SESSION['last_tax'])) {
-        echo '<div class="recorded-posts"><h2 class="related-post-title">'.$_SESSION["last_tax"].'</h2>';
+    if (isset($_COOKIE['last_tax']) && !empty($_COOKIE['last_tax'])) {
+        echo '<div class="recorded-posts"><h2 class="related-post-title">'.$_COOKIE["last_tax"].'</h2>';
     }
     if ( !empty($g_prev_post)) {
         $class_str = "nav-previous nav-id-".$g_prev_post->ID;
