@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 6.5
+Version: 6.6
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -68,27 +68,9 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 fonts.loli.net
 fonts.geekzu.org
 */
-/*
-@import url('https://fonts.cdnfonts.com/css/kaisei-opti');
-@import url('https://fonts.cdnfonts.com/css/liu-jian-mao-cao');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-*/
-/*
-Kaisei Opti
-'Liu Jian Mao Cao'
-Long Cang
-*/
-/* @import url("https://fontsapi.zeoseven.com/467/main/result.css");
-@import url("https://fontsapi.zeoseven.com/306/main/result.css");
-@import url("https://fontsapi.zeoseven.com/83/main/result.css");
-@import url("https://fontsapi.zeoseven.com/320/main/result.css");
-@import url("https://fontsapi.zeoseven.com/363/main/result.css");
-@import url("https://fontsapi.zeoseven.com/97/main/result.css");
-@import url("https://fontsapi.zeoseven.com/320/main/result.css");
-https://fonts.font.im/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap
-*/
-/* @import url("https://fontsapi.zeoseven.com/97/main/result.css"); */
+
 @import url("./assets/fonts/MDWuFengTi/MDWuFengTi.css");
+@import url("./assets/fonts/SanjiZhiHei/SanjiZhiHei.css");
 @import url('https://fonts.font.im/css2?family=Grechen+Fuemen&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
 
 
@@ -105,7 +87,7 @@ https://fonts.font.im/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&disp
 }
 
 html {
-	font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	line-height: 1.15;
 	font-weight: normal;
 	font-optical-sizing: auto;
@@ -1325,7 +1307,7 @@ html {
 }
 
 .site-description {
-    font-family: pwe2019, Helvetica, Tahoma, Arial, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: pwe2019, Helvetica, Tahoma, Arial, SanjiZhiHei, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-bottom: 0;
@@ -1468,7 +1450,7 @@ html {
 }
 
 .entry-title {
-	font-family: 'MDMD-WuFengTi', Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: 'MDMD-WuFengTi', Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .page-title,
@@ -1568,7 +1550,7 @@ span .festival {
 }
 
 .nav-links {
-	font-family:pwe2019, Helvetica, Tahoma, Arial, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family:pwe2019, Helvetica, Tahoma, Arial, SanjiZhiHei, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .nav-links a.page-numbers {
@@ -1930,7 +1912,7 @@ span.license-cc a:first-child {
 
 h2.related-post-title {
 	text-align: center;
-	font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .related-posts {
@@ -1981,7 +1963,7 @@ h2.related-post-title {
 
 .piced-link-window a,
 .piced-link-window span {
-	font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family:Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     overflow: hidden;
     line-height: 1.7em;
     white-space: nowrap;
@@ -2586,7 +2568,7 @@ h2.widget-title {
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
     color: #2F3540;
-	font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family:Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .widget-title a {
