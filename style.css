@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 6.6
+Version: 6.7
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -69,9 +69,11 @@ fonts.loli.net
 fonts.geekzu.org
 */
 
-@import url("./assets/fonts/MDWuFengTi/MDWuFengTi.css");
-@import url("./assets/fonts/SanjiZhiHei/SanjiZhiHei.css");
-@import url('https://fonts.font.im/css2?family=Grechen+Fuemen&family=Long+Cang&family=Noto+Sans+SC&family=Slackside+One&display=swap');
+@import url("./assets/fonts/FengYaShiSong/FengYaShiSong.css"); /*文章标题*/
+@import url("./assets/fonts/SourceHanSansSC/SourceHanSansSC.css"); /*周边*/
+@import url("./assets/fonts/SanJiSongHeiTi/SanJiSongHeiTi.css"); /*正文*/
+@import url("./assets/fonts/ManTianXing/ManTianXing.css"); /*头像*/
+@import url('https://fonts.font.im/css2?family=Noto+Sans+SC&display=swap');
 
 
 /* lavishly-yours-regular */
@@ -87,7 +89,7 @@ fonts.geekzu.org
 }
 
 html {
-	font-family: Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: Helvetica, Tahoma, Arial, 'Source Han Sans SC', "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	line-height: 1.15;
 	font-weight: normal;
 	font-optical-sizing: auto;
@@ -1282,7 +1284,7 @@ html {
 }
 
 .site-title {
-    font-family: pwe2019, Helvetica, Tahoma, Arial, 'Long Cang', "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: pwe2019, Helvetica, Tahoma, Arial, ManTianXing, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	clear: none;
 	font-size: 24px;
 	font-size: 1.5rem;
@@ -1307,7 +1309,7 @@ html {
 }
 
 .site-description {
-    font-family: pwe2019, Helvetica, Tahoma, Arial, SanjiZhiHei, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: pwe2019, Helvetica, Tahoma, Arial, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin-bottom: 0;
@@ -1450,7 +1452,7 @@ html {
 }
 
 .entry-title {
-	font-family: 'MDMD-WuFengTi', Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: FengYaShiSong;
 }
 
 .page-title,
@@ -1550,7 +1552,7 @@ span .festival {
 }
 
 .nav-links {
-	font-family:pwe2019, Helvetica, Tahoma, Arial, SanjiZhiHei, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family:pwe2019, Helvetica, Tahoma, Arial, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .nav-links a.page-numbers {
@@ -1689,6 +1691,7 @@ body .entry-header {
     display: inline-block;
     font-weight: 700;
 	position: relative;
+	font-family: FengYaShiSong;
 	padding: 0.05em 1.3em 0.05em 1.7em;
 	box-shadow: inset 0 -0.6em 0 rgba(73, 84, 100, 0.55); /*495464*/
 }
@@ -1728,6 +1731,7 @@ body .entry-header {
 
 .entry-content p {
 	letter-spacing: 1px;
+	font-family: SanJiSongHeiTi;
 }
 
 .entry-content .more-link:before {
@@ -1742,7 +1746,7 @@ p .photo-title {
 	margin-left: auto;
 	margin-right: auto;
 	font-weight: 700;
-	font-family: MDMD-WuFengTi;
+	font-family: FengYaShiSong;
 	text-align: center;
 }
 
@@ -1912,7 +1916,6 @@ span.license-cc a:first-child {
 
 h2.related-post-title {
 	text-align: center;
-	font-family: Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .related-posts {
@@ -1963,7 +1966,7 @@ h2.related-post-title {
 
 .piced-link-window a,
 .piced-link-window span {
-	font-family:Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: FengYaShiSong;
     overflow: hidden;
     line-height: 1.7em;
     white-space: nowrap;
@@ -2322,7 +2325,7 @@ ol.comment-list  li.depth-1 {
 	opacity: 1.0;
 	display: block;
 	font-size: 3.75rem;
-	font-family: 'Grechen Fuemen', 'Long Cang', 'Slackside One';
+	font-family: ManTianXing;
 	float: left;
 	width:4rem;
 	line-height: 4rem;
@@ -2408,6 +2411,10 @@ span.mention {
 .comment-content {
 	line-height: 1.4;
 }
+.comment-content p {
+	font-family: SanJiSongHeiTi;
+}
+
 .comment-content p:first-child {
 	margin-top: 0.5em;
 }
@@ -2568,7 +2575,7 @@ h2.widget-title {
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
     color: #2F3540;
-	font-family:Helvetica, Tahoma, Arial, SanjiZhiHei, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family: FengYaShiSong;
 }
 
 .widget-title a {
