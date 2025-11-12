@@ -25,7 +25,7 @@
             $url = esc_attr($commenter['comment_author_url']);
         }
         if ( $cookie ) {
-            $comment_part.= sprintf('<div class="form_row"><span> %s <i class="show-form " >[编辑]</i>， 欢迎回来。</span></div>', $cookie) ;
+            $comment_part = sprintf('<div class="form_row"><span> %s <i class="show-form " >[编辑]</i>， 欢迎回来。</span></div>', $cookie) ;
             echo $comment_part;
         }
         else {

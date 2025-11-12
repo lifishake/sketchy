@@ -297,6 +297,8 @@ function sketchy_get_ziface($nickyname) {
 				break;
 			case 1:	
 			case 2:
+				$zi=strtoupper($chinese[0]);
+				break;
 			case 3:
 				$zi=strtoupper($chinese[$len - 1]);
 				break;
