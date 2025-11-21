@@ -18,6 +18,8 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
+define('SKETCHY_VER', '20251118');
+
 function sketchy_setup() {
 
 	add_theme_support( 'automatic-feed-links' );
@@ -100,7 +102,7 @@ add_action( 'wp_head', 'sketchy_javascript_detection', 0 );
 function sketchy_scripts() {
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(),'20251114');
+	wp_enqueue_style( 'sketchy-style', get_stylesheet_uri(), array(), SKETCHY_VER);
 
 	wp_enqueue_script( 'sketchy-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
@@ -109,13 +111,13 @@ function sketchy_scripts() {
 	);
 
 	if ( has_nav_menu( 'top' ) ) {
-		wp_enqueue_script( 'sketchy-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '1.0', true );
+		wp_enqueue_script( 'sketchy-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), SKETCHY_VER, true );
 		$sketchy_l10n['expand']         = '展开';
 		$sketchy_l10n['collapse']       = '折叠';
 		$sketchy_l10n['icon']           = sketchy_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
 	}
 
-	wp_enqueue_script( 'sketchy-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '20200408', true );
+	wp_enqueue_script( 'sketchy-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), SKETCHY_VER, true );
 
 	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 
@@ -125,7 +127,7 @@ function sketchy_scripts() {
 		if ( get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		wp_enqueue_script( 'sketchy-ajax-comment', get_theme_file_uri( '/assets/js/ajax-comment.js' ), array( 'jquery' ), '20200408', true );
+		wp_enqueue_script( 'sketchy-ajax-comment', get_theme_file_uri( '/assets/js/ajax-comment.js' ), array( 'jquery' ), SKETCHY_VER, true );
 		wp_localize_script( 'sketchy-ajax-comment', 'ajaxcomment', array( 'ajax_url'   => admin_url('admin-ajax.php')));
 	}
 
@@ -279,7 +281,7 @@ function sketchy_get_ziface($nickyname) {
 		//全英文，取第一个字母，转大写
 		$zi=strtoupper(mb_substr($nickyname, 0, 1, 'utf-8'));
 	} else {
-		$n1 = str_replace(array("博客","故事","日志","记忆","的","先生","同学","小姐","大叔","小子","夫子","网友","生活",".","の","Mr","Mr.","Miss","先森","在","博士","公社","个人","游子","记录","路人","太郎","联盟","山人","之"), "", $nickyname);
+		$n1 = str_replace(array("博客","故事","日志","记忆","的","先生","同学","小姐","大叔","小子","夫子","网友","生活",".","の","Mr","Mr.","Miss","先森","在","博士","公社","个人","游子","记录","路人","太郎","联盟","山人","之","大少"), "", $nickyname);
 		$first_str = mb_substr($n1, 0, 1, 'utf-8');
 		if(in_array($first_str, array("大","小","老","后","阿"))) {
 			$n1 = str_replace($first_str, "", $n1);

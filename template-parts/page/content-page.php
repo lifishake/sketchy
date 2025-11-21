@@ -25,7 +25,7 @@
 	<div class="entry-content">
 		<?php
 		$type = "";
-		$folder = get_template_directory();
+		$folder = wp_normalize_path(get_template_directory());
 		if (file_exists($folder."/inc/pewae-local.php")) {
 			include_once($folder."/inc/pewae-local.php");
 		}

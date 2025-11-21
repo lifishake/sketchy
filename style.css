@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 6.9
+Version: 7.0
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,23 +61,24 @@ Text Domain: //github.com/lifishake/sketchy
 1.0 Normalize
 Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
-/*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');*/
-
-/*@import url('https://fonts.lug.ustc.edu.cn/css2?family=Noto+Serif+SC&display=swap');*/
-/*
-fonts.loli.net
-fonts.geekzu.org
-*/
-
-@import url("./assets/fonts/FengYaShiSong/FengYaShiSong.css"); /*文章标题*/
-@import url("./assets/fonts/SourceHanSansSC/SourceHanSansSC.css"); /*周边*/
-@import url("./assets/fonts/SanJiSongHeiTi/SanJiSongHeiTi.css"); /*正文*/
-@import url("./assets/fonts/ManTianXing/ManTianXing.css"); /*头像*/
-@import url('https://fonts.font.im/css2?family=Noto+Sans+SC&display=swap');
-
-
-/* lavishly-yours-regular */
-
+:root{
+	--🔍-px--3: 12px;
+	--🔍-px--2: 14px;
+	--🔍-px--1: 16px;
+	--🔍-px-0: 18px;
+	--🔍-px-1: 20px;
+	--🔍-px-2: 22px;
+	--🔍-px-3: 24px;
+	--🔍-px-4: 28px;
+	--🔍-rem--3: 0.75rem;
+	--🔍-rem--2: 0.875rem;
+	--🔍-rem--1: 1rem;
+	--🔍-rem-0: 1.125rem;
+	--🔍-rem-1: 1.25rem;
+	--🔍-rem-2: 1.375rem;
+	--🔍-rem-3: 1.5rem;
+	--🔍-rem-4: 1.75rem;
+}
 
 @font-face{
   font-family:'pwe2019';	/*自定义字体名字*/
@@ -89,7 +90,7 @@ fonts.geekzu.org
 }
 
 html {
-	font-family: Helvetica, Tahoma, Arial, 'Source Han Sans SC', "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: Helvetica, Tahoma, Arial, var(--🖊-base), "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	line-height: 1.15;
 	font-weight: normal;
 	font-optical-sizing: auto;
@@ -209,7 +210,7 @@ small {
 
 sub,
 sup {
-	font-size: 75%;                                        
+	font-size: 75%;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
@@ -395,8 +396,8 @@ template {
 	clip: auto !important;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	font-weight: 700;
 	height: auto;
 	left: 5px;
@@ -513,8 +514,8 @@ input,
 select,
 textarea {
 	color: #0b1013;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 	font-weight: 400;
 	line-height: 1.66;
 }
@@ -550,34 +551,34 @@ h6:first-child {
 }
 
 h1 {
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: var(--🔍-px-3);
+	font-size: var(--🔍-rem-3);
 }
 
 h2 {
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: var(--🔍-px-2);
+	font-size: var(--🔍-rem-2);
 }
 
 h3 {
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: var(--🔍-px-1);
+	font-size: var(--🔍-rem-1);
 }
 
 h4 {
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: var(--🔍-px-0);
+	font-size: var(--🔍-rem-0);
 }
 
 h5 {
-	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: var(--🔍-px-0);
+	font-size: var(--🔍-rem-0);
 	letter-spacing: 0.15em;
 }
 
 h6 {
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: var(--🔍-px-0);
+	font-size: var(--🔍-rem-0);
 }
 
 h2.hl,
@@ -603,8 +604,8 @@ i {
 
 blockquote {
 	color: #333;
-	font-size: 12px;
-	font-size: 0.925rem;
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 	font-style: italic;
 	line-height: 1.7;
 	margin: 1rem;
@@ -632,8 +633,8 @@ address {
 pre {
 	background-color: #E3E8E5;
 	font-family: consolas, "Courier 10 Pitch", Courier, monospace, NSimSun;/*放代码,所以使用等宽字体*/
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -645,8 +646,8 @@ code,
 kbd,
 tt,
 var {
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 }
 
 abbr,
@@ -766,8 +767,8 @@ input[type="submit"] {
 	background-color: #495464;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	font-weight: 700;
 	line-height: 1;
 	padding: 1em 2em;
@@ -991,8 +992,8 @@ a .nav-title,
 	border-left: 2px solid rgba(187, 191, 202, .9);
 	border-right: 2px solid rgba(187, 191, 202, .9);
 	border-radius: 0 0 5px 5px;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: var(--🔍-px-0);
+	font-size: var(--🔍-rem-0);
 	position: relative;
 	background-color:rgba(241, 243, 244, .95);
     background-size: cover;
@@ -1116,8 +1117,8 @@ a .nav-title,
 	box-shadow: none;
 	color: #2F3540;
 	display: none;
-	font-size: 18px;
-	font-size: 1rem;
+	font-size: var(--🔍-px-0);
+	font-size: var(--🔍-rem-0);
 	font-weight: 700;
 	line-height: 1.5;
 	margin: auto;
@@ -1284,10 +1285,10 @@ html {
 }
 
 .site-title {
-    font-family: pwe2019, Helvetica, Tahoma, Arial, ManTianXing, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: pwe2019, Helvetica, Tahoma, Arial, var(--🖊-face), "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	clear: none;
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: var(--🔍-px-4);
+	font-size: var(--🔍-rem-4);
 	font-weight: 700;
 	line-height: 1.25;
 	letter-spacing: 0.08em;
@@ -1309,9 +1310,9 @@ html {
 }
 
 .site-description {
-    font-family: pwe2019, Helvetica, Tahoma, Arial, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 13px;
-	font-size: 0.8125rem;
+    font-family: pwe2019, Helvetica, Tahoma, Arial, var(--🖊-face);
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 	margin-bottom: 0;
 	color: #7c7b7a;
 	letter-spacing: -6px;
@@ -1452,14 +1453,14 @@ html {
 }
 
 .entry-title {
-	font-family: FengYaShiSong;
+	font-family: var(--🖊-title);
 }
 
 .page-title,
 body.page .entry-title {
 	color: #2F3540;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	font-weight: 700;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
@@ -1496,8 +1497,8 @@ body.page .entry-title {
 }
 
 .entry-meta {
-	font-size: 11px;
-	font-size: 0.6875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	font-weight: 700;
 	letter-spacing: 0.1818em;
 	padding-bottom: 0.25em;
@@ -1526,8 +1527,8 @@ span .festival {
 .pagination,
 .comments-pagination {
 	border-top: 1px solid #95939B;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	font-weight: 700;
 	padding: 2em 0 3em;
 	text-align: center;
@@ -1552,7 +1553,7 @@ span .festival {
 }
 
 .nav-links {
-	font-family:pwe2019, Helvetica, Tahoma, Arial, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-family:pwe2019, Helvetica, Tahoma, Arial;
 }
 
 .nav-links a.page-numbers {
@@ -1577,8 +1578,8 @@ span .festival {
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	display: inline-block;
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: var(--🔍-px-3);
+	font-size: var(--🔍-rem-3);
 	line-height: 1;
 	padding: 0.25em 0.5em 0.4em;
 	background-color: #B2B1B5;
@@ -1618,8 +1619,8 @@ a.prev.page-numbers:hover {
 .entry-content blockquote.alignleft,
 .entry-content blockquote.alignright {
 	color: #a9b7b2;
-	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	width: 48%;
 }
 
@@ -1673,8 +1674,8 @@ body .entry-header {
 
 .taxonomy-description {
 	color: #a9b7b2;
-	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 }
 
 .entry-meta time,
@@ -1687,11 +1688,12 @@ body .entry-header {
 
 .entry-content h2 {
     color: #2F3540;
-    font-size: 1.2em;
+    font-size: var(--🔍-px-1);
+	font-size: var(--🔍-rem-1);
     display: inline-block;
     font-weight: 700;
 	position: relative;
-	font-family: FengYaShiSong;
+	font-family: var(--🖊-title);
 	padding: 0.05em 1.3em 0.05em 1.7em;
 	box-shadow: inset 0 -0.6em 0 rgba(73, 84, 100, 0.55); /*495464*/
 }
@@ -1731,7 +1733,7 @@ body .entry-header {
 
 .entry-content p {
 	letter-spacing: 1px;
-	font-family: SanJiSongHeiTi;
+	font-family: var(--🖊-context);
 }
 
 .entry-content .more-link:before {
@@ -1746,7 +1748,7 @@ p .photo-title {
 	margin-left: auto;
 	margin-right: auto;
 	font-weight: 700;
-	font-family: FengYaShiSong;
+	font-family: var(--🖊-title);
 	text-align: center;
 }
 
@@ -1802,8 +1804,8 @@ span.license-cc a:first-child {
 
 .entry-footer .license-cc {
 	display: inline-block;
-	font-size: 12px;
-	font-size: 0.8rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	color: #2F3540;
 }
 
@@ -1821,8 +1823,8 @@ span.license-cc a:first-child {
 .entry-footer .weather-links,
 .entry-footer  .edit-link{
 	display: block;
-	font-size: 11px;
-	font-size: 0.6875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	letter-spacing: 0.1818em;
 	padding-left: 2.5em;
 	position: relative;
@@ -1875,8 +1877,8 @@ span.license-cc a:first-child {
 }
 
 .nav-title {
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 }
 
 .post-navigation .nav-next,
@@ -1966,12 +1968,13 @@ h2.related-post-title {
 
 .piced-link-window a,
 .piced-link-window span {
-	font-family: FengYaShiSong;
+	font-family: var(--🖊-title);
     overflow: hidden;
     line-height: 1.7em;
     white-space: nowrap;
 	text-overflow: ellipsis;
-	font-size:24px;
+	font-size: var(--🔍-px-4);
+	font-size: var(--🔍-rem-4);
 	font-weight: 700;
 	display: block;
 	/*padding-bottom:32px;*/
@@ -1991,13 +1994,13 @@ h2.related-post-title {
 }
 
 .page .entry-header .edit-link {
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 }
 
 .search .page .entry-header .edit-link {
-	font-size: 11px;
-	font-size: 0.6875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 }
 
 .page:not(.home) #content {
@@ -2069,8 +2072,8 @@ h2.related-post-title {
 /* Social nav */
 
 .social-navigation {
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 	margin-bottom: 1em;
 }
 
@@ -2113,8 +2116,8 @@ h2.related-post-title {
 /* Site info */
 
 .site-info {
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	margin: 1em 0 1em 1.5em;
 }
 
@@ -2182,8 +2185,8 @@ span.warnning {
 }
 
 .comments-title {
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: var(--🔍-px-1);
+	font-size: var(--🔍-rem-1);
 	margin-bottom: 1em;
 }
 
@@ -2240,8 +2243,8 @@ ol.comment-list  li.depth-1 {
 }
 
 .comment-author {
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 	position: relative;
 	z-index: 2;
 }
@@ -2325,7 +2328,7 @@ ol.comment-list  li.depth-1 {
 	opacity: 1.0;
 	display: block;
 	font-size: 3.75rem;
-	font-family: ManTianXing;
+	font-family: var(--🖊-face);
 	float: left;
 	width:4rem;
 	line-height: 4rem;
@@ -2387,8 +2390,8 @@ ol.comment-list  li.depth-1 {
 }
 
 .comment-metadata {
-	font-size: 14px;
-	font-size: 0.833rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	font-weight: 700;
 	text-transform: uppercase;
 	position: relative;
@@ -2397,8 +2400,8 @@ ol.comment-list  li.depth-1 {
 
 .comment-body {
 	color: #2F3540;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	margin-bottom: 0.5em;
 	min-height: 3rem;
 }
@@ -2412,7 +2415,7 @@ span.mention {
 	line-height: 1.4;
 }
 .comment-content p {
-	font-family: SanJiSongHeiTi;
+	font-family: var(--🖊-context);
 }
 
 .comment-content p:first-child {
@@ -2465,8 +2468,8 @@ li.bypostauthor > article > footer > div.comment-metadata > b.author-url a {
 .no-comments,
 .comment-awaiting-moderation {
 	color: #9ab7b2;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	font-style: italic;
 }
 
@@ -2480,7 +2483,8 @@ li.bypostauthor > article > footer > div.comment-metadata > b.author-url a {
 
 .form_row {
 	margin: 0.5em 0 1em;
-	font-size: 14px;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	line-height: 1.5;
 }
 
@@ -2518,7 +2522,8 @@ li.bypostauthor > article > footer > div.comment-metadata > b.author-url a {
     color:#2F3540;
     box-shadow:0 1px 1px rgba(0,0,0,0.25),0 0 1px rgba(0,0,0,0.35);
     display:inline-block;
-    font-size:14px;
+    font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
     margin-bottom:0;
     padding:12px 25px;
 }
@@ -2569,13 +2574,13 @@ li.bypostauthor > article > footer > div.comment-metadata > b.author-url a {
 }
 
 h2.widget-title {
-	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: var(--🔍-px--1);
+	font-size: var(--🔍-rem--1);
 	letter-spacing: 0.1818em;
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
     color: #2F3540;
-	font-family: FengYaShiSong;
+	font-family: var(--🖊-title);
 }
 
 .widget-title a {
@@ -2664,8 +2669,8 @@ h2.widget-title {
 /* Gravatar */
 
 .widget-grofile h4 {
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: var(--🔍-px-0);
+	font-size: var(--🔍-rem-0);
 	margin-bottom: 0;
 }
 
@@ -2732,8 +2737,8 @@ object {
 
 .wp-caption {
 	color: #a9b7b2;
-	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: var(--🔍-px--2);
+	font-size: var(--🔍-rem--2);
 	font-style: italic;
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -2795,8 +2800,8 @@ object {
 }
 
 .no-svg .dropdown-toggle .svg-fallback.icon-angle-down {
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: var(--🔍-px-1);
+	font-size: var(--🔍-rem-1);
 	font-weight: 400;
 	line-height: 1;
 	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
@@ -2899,44 +2904,44 @@ object {
 	input,
 	select,
 	textarea {
-		font-size: 16px;
-		font-size: 1rem;
+		font-size: var(--🔍-px-0);
+		font-size: var(--🔍-rem-0);
 	}
 
 	h1 {
-        font-size: 24px;
-		font-size: 1.5rem;
+        font-size: var(--🔍-px-3);
+		font-size: var(--🔍-rem-3);
 	}
 
 	h2 {
-        font-size: 22px;
-		font-size: 1.375rem;
+        font-size: var(--🔍-px-2);
+		font-size: var(--🔍-rem-2);
 	}
 
 	h3 {
-        font-size: 18px;
-		font-size: 1.125rem;
+        font-size: var(--🔍-px-1);
+		font-size: var(--🔍-rem-1);
 	}
 
 	h4 {
-        font-size: 16px;
-		font-size: 1rem;
+        font-size: var(--🔍-px-0);
+		font-size: var(--🔍-rem-0);
 	}
 
 	h5 {
-		font-size: 13px;
-		font-size: 0.8125rem;
+		font-size: var(--🔍-px-0);
+		font-size: var(--🔍-rem-0);
 	}
 
 	h6 {
-		font-size: 16px;
-		font-size: 1rem;
+		font-size: var(--🔍-px-0);
+		font-size: var(--🔍-rem-0);
 	}
 
 	.entry-content blockquote.alignleft,
 	.entry-content blockquote.alignright {
-		font-size: 14px;
-		font-size: 0.875rem;
+		font-size: var(--🔍-px--2);
+		font-size: var(--🔍-rem--2);
 	}
 
 	/* Fix image alignment */
@@ -2959,20 +2964,20 @@ object {
 	/* Blog Index, Archive, Search */
 
 	.taxonomy-description {
-		font-size: 14px;
-		font-size: 0.875rem;
+		font-size: var(--🔍-px--1);
+		font-size: var(--🔍-rem--1);
 	}
 
 	.page-numbers.current {
-		font-size: 16px;
-		font-size: 1rem;
+		font-size: var(--🔍-px-0);
+		font-size: var(--🔍-rem-0);
 	}
 
 	/* Site Footer */
 
 	.site-footer {
-		font-size: 16px;
-		font-size: 1rem;
+		font-size: var(--🔍-px-0);
+		font-size: var(--🔍-rem-0);
 	}
 
 }
@@ -2997,15 +3002,13 @@ object {
 	input,
 	select,
 	textarea {
-		font-size: 16px;
-		font-size: 1rem;
 		line-height: 1.7;
 	}
 
 	.entry-content blockquote.alignleft,
 	.entry-content blockquote.alignright {
-		font-size: 13px;
-		font-size: 0.8125rem;
+		font-size: var(--🔍-px--2);
+		font-size: var(--🔍-rem--2);
 	}
 
 	/* Layout */
@@ -3040,16 +3043,16 @@ object {
 	}
 
 	.site-description {
-		font-size: 16px;
-		font-size: 1rem;
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
 
 	/* Navigation */
 
 	.navigation-top {
 		bottom: 0;
-		font-size: 14px;
-		font-size: 0.875rem;
+		font-size: var(--🔍-px--1);
+		font-size: var(--🔍-rem--1);
 		left: 0;
 		right: 0;
 		width: 100%;
@@ -3260,8 +3263,8 @@ object {
 	/* Posts */
 	.single-post .entry-title,
 	.page .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
+		font-size: var(--🔍-px-3);
+		font-size: var(--🔍-rem-3);
 	}
 
 	.comments-pagination,
@@ -3402,16 +3405,16 @@ object {
 	/* Widgets */
 
 	h2.widget-title {
-		font-size: 11px;
-		font-size: 0.6875rem;
+		font-size: var(--🔍-px--1);
+		font-size: var(--🔍-rem--1);
 		margin-bottom: 1em;
 	}
 
 	/* Footer */
 
 	.site-footer {
-		font-size: 14px;
-		font-size: 0.875rem;
+		font-size: var(--🔍-px--1);
+		font-size: var(--🔍-rem--1);
 		line-height: 1.6;
 		margin-top: 3em;
 		border-top: 1px solid #B2B1B5;
@@ -3468,8 +3471,8 @@ object {
 	}
 
 	.page-numbers.current {
-		font-size: 15px;
-		font-size: 0.9375rem;
+		font-size: var(--🔍-px--1);
+		font-size: var(--🔍-rem--1);
 	}
 
 	.page-numbers.current .screen-reader-text {
