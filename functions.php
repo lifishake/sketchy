@@ -18,7 +18,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
-define('SKETCHY_VER', '20251118');
+define('SKETCHY_VER', '20251129');
 
 function sketchy_setup() {
 
