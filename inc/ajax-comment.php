@@ -98,9 +98,10 @@ function sketchy_additional_comment_show( $comment ) {
     {
         $success = 10;
     }
+
     $body = sprintf('<li %s><article class="comment-body"><footer class="comment-meta"><div class="comment-author vcard">%s</div><div class="comment-metadata"><span><b class="fn author-url">%s</b></span><b class="fn">%s</b><time datetime="%s">刚刚</time></div></footer><div class="comment-content">%s%s</div></article></li>', 
                     comment_class('', null, null, false),
-                    sketchy_get_ziface($comment->comment_author),
+                    $sketchy_get_ziface($comment) ,
                     $comment->comment_author,
                     $comment->comment_author_url,
                     $comment->comment_date,

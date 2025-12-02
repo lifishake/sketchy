@@ -32,8 +32,7 @@ function sketchy_single_comment( $comment, $args, $depth ) {
     }
     
     //$avatar_img = get_avatar( $comment, $args['avatar_size'] );
-    $comment_author_name = $comment->comment_author;
-    $ziface=sketchy_get_ziface($comment_author_name);
+    $ziface = sketchy_get_ziface($comment);
     $parent_comment_id = $comment->comment_parent ;
 ?>
         <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
@@ -41,7 +40,7 @@ function sketchy_single_comment( $comment, $args, $depth ) {
                 <footer class="comment-meta">
                     <div class="comment-author vcard">
                         <?php if ($comment_author_url) {
-                                printf('<a class="url" href="%1$s" target="_blank" rel="external nofollow" title="%2$s">%3$s</a>', $comment_author_url, $comment_author_name, $ziface);
+                                printf('<a class="url" href="%1$s" target="_blank" rel="external nofollow" title="%2$s">%3$s</a>', $comment_author_url, $comment->comment_author_name, $ziface);
                             } else {
                                 //echo $avatar_img;
                                 echo $ziface;
@@ -55,10 +54,10 @@ function sketchy_single_comment( $comment, $args, $depth ) {
                             $comment_author_url = "";
                         }
                         if (''===$comment_author_url) {
-                            printf( '<b class="fn">%s</b>', $comment_author_name );
+                            printf( '<b class="fn">%s</b>', $comment->comment_author_name );
                         }
                         else {
-                            printf( '<b class="fn author-url"><a href="%1$s" target="_blank" rel="external nofollow" class="url">%2$s</a></b>', $comment_author_url, $comment_author_name );
+                            printf( '<b class="fn author-url"><a href="%1$s" target="_blank" rel="external nofollow" class="url">%2$s</a></b>', $comment_author_url, $comment->comment_author_name );
                         }
                         if ( $parent_comment_id > 0 ) {
                             printf( '<span class="mention"> @%1$s </span>', get_comment_author($parent_comment_id) );

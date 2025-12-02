@@ -18,7 +18,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
-define('SKETCHY_VER', '20251129');
+define('SKETCHY_VER', '20251201');
 
 function sketchy_setup() {
 
@@ -269,11 +269,14 @@ function sketchy_mask_color($refcolor, $a=0.85) {
  * 作用: 获得昵称的第一个汉字或者前两个英文字符
  * 来源: 自创
  */
-function sketchy_get_ziface($nickyname) {
+function sketchy_get_ziface($comment) {
 
+
+	$nickyname = $comment->comment_author;
 	if("关键字【彪】" == $nickyname) {
 		return '<span class="ziface">彪</span>';
 	}
+
 	$ascii_len = strlen($nickyname);
 	$mb_len = mb_strlen($nickyname, 'utf-8');
 	
@@ -316,6 +319,14 @@ function sketchy_get_ziface($nickyname) {
 				break;
 		}
 	}
+
+	if (function_exists('apip_get_face_character_from_bookmark')) {
+		$zistatic = apip_get_face_character_from_bookmark($comment->comment_author_email);
+		if (!empty($zistatic)) {
+			$zi = $zistatic;
+		}
+	}
+
 	return '<span class="ziface">'.$zi.'</span>';
 }
 
