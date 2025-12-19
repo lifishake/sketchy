@@ -54,10 +54,10 @@ function sketchy_single_comment( $comment, $args, $depth ) {
                             $comment_author_url = "";
                         }
                         if (''===$comment_author_url) {
-                            printf( '<b class="fn">%s</b>', $comment->comment_author_name );
+                            printf( '<b class="fn">%s</b>', $comment->comment_author );
                         }
                         else {
-                            printf( '<b class="fn author-url"><a href="%1$s" target="_blank" rel="external nofollow" class="url">%2$s</a></b>', $comment_author_url, $comment->comment_author_name );
+                            printf( '<b class="fn author-url"><a href="%1$s" target="_blank" rel="external nofollow" class="url">%2$s</a></b>', $comment_author_url, $comment->comment_author );
                         }
                         if ( $parent_comment_id > 0 ) {
                             printf( '<span class="mention"> @%1$s </span>', get_comment_author($parent_comment_id) );
