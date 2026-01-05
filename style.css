@@ -2854,14 +2854,23 @@ object {
 
 .bddb-poster-thumb a img{
 	box-shadow: 0 0 5px  var(--color-simple-line);
-	opacity: .95;
+	opacity: 0.90;
 }
+
 .bddb-poster-thumb a img:hover,
 .bddb-poster-thumb a img:focus{
 	box-shadow: 0 0 5px var(--color-havor);
 	opacity: 1;
 	animation: WallHighlight 1.8s linear 1
 	/*animation: swing 1s 1;*/
+}
+
+.bddb-poster-thumb a img {
+  opacity: 0;
+}
+
+.bddb-poster-thumb a img.loaded {
+  opacity: 0.90;
 }
 
 @keyframes WallHighlight

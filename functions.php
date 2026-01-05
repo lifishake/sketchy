@@ -18,7 +18,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
-define('SKETCHY_VER', '20251201');
+define('SKETCHY_VER', '20251229');
 
 function sketchy_setup() {
 
@@ -168,6 +168,7 @@ function sketchy_scripts() {
 			$css .= ".piced-link-window:hover, .piced-link-window:focus{ border-color:".$maincolor."; }";
 			$css .= ".social-navigation a:hover, .social-navigation a:focus {background-color:".$maincolor.";}";
 			$css .= ".entry-footer .edit-link a.post-edit-link {background-color:".$maincolor.";}";
+			$css .= " textarea#comment {border-color:".$maincolor.";}";
 			
 			if (is_single())
 			{
