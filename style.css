@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 8.5
+Version: 8.6
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2338,12 +2338,16 @@ ol.comment-list li.depth-1 {
   margin: -0.375rem 1rem 0 0;
   text-align: center;
   background:
-    linear-gradient(to right, #e3e8e5 2px, transparent 2px) 0 0,
-    linear-gradient(to left, #e3e8e5 2px, transparent 2px) 100% 100%,
-    linear-gradient(to bottom, #e3e8e5 2px, transparent 2px) 0 0,
-    linear-gradient(to top, #e3e8e5 2px, transparent 2px) 100% 100%;
+    linear-gradient(to right, var(--color-text-light) 2px, transparent 2px) 0 0,
+    linear-gradient(to left, var(--color-text-light) 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, var(--color-text-light) 2px, transparent 2px) 0 0,
+    linear-gradient(to top, var(--color-text-light) 2px, transparent 2px) 100% 100%;
   background-repeat: no-repeat;
   background-size: 12px 12px;
+}
+
+a .ziface {
+  color: color-mix(in oklch, var(--color-text) 75%, #333);
 }
 
 .comment-author .avatar:hover,
