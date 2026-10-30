@@ -143,11 +143,13 @@ function  sketchy_add_single_inline_css()
 	foreach ($got_ids as $id) {
 		$picid = get_post_thumbnail_id($id);
 		$maincolor = get_post_meta($picid, "apip_main_color", true);
-		if (empty($maincolor)) {
-			continue;
+		if (false !== $maincolor) {
+			$rgb = hex2rgb($maincolor);
+			$hue = rgb2hsv($rgb)[0];
+			$calc_color = sprintf("color-mix(in oklch, hsl(%s, 25%%, 55%%) 48%%, white)", $hue);
+			$addi_class = "nav-id-" . $id;
+			$css .= " ." . $addi_class . "{border-color: {$calc_color};}";
 		}
-		$addi_class = "nav-id-" . $id;
-		$css .= " ." . $addi_class . "{border-color: {$maincolor};}";
 	}
 
 	$folder = get_template_directory();

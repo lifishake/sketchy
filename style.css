@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 8.7
+Version: 8.8
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1943,13 +1943,17 @@ h2.related-post-title {
 
 .piced-link-window {
   background: color-mix(in oklab, var(--color-main-bg) 85%, transparent);
-  border: 2px solid var(--color-border-heavy);
+  border: 2px solid var(--color-border-35);
   border-radius: 5px;
   width: 96%;
   height: 80px;
   float: initial;
   padding: 0 1em;
   position: relative;
+}
+
+.piced-link-window a{
+  color: var(--color-text-light);
 }
 
 .piced-link-window:hover,
@@ -2192,7 +2196,7 @@ span.warnning {
   clear: both;
   padding: 2em 0 0.5em;
   background-color: var(--color-bg-95);
-  border: 2px solid var(--color-border-heavy);
+  border: 2px solid var(--color-border-35);
   border-radius: 5px;
   padding: 15px 2em;
   margin: 1em 3px;
