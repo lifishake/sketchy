@@ -78,13 +78,16 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
   --🔍-rem-2: 1.375rem;
   --🔍-rem-3: 1.5rem;
   --🔍-rem-4: 1.75rem;
-  --color-text:#1f2e1b;
-  --color-main-bg:  hsl(170, 12%, 90%);
-  --color-heavy: hsl(170.27,18.05%,59.8%);
+  --color-chief-hue:173;
+  --color-ref:hsl(175, 86%, 14%);
+  --color-text:hsl(var(--color-chief-hue),26.03%,14.31%);
+  --color-main-bg:  hsl(var(--color-chief-hue), 24%, 96%);
+  --color-heavy: hsl(var(--color-chief-hue),18.05%,59.8%);
   --color-havor: color-mix(in oklch, var(--color-text) 62%, transparent);
   --color-text-light: color-mix(in oklch, var(--color-text) 38%, transparent);
-  --color-simple-line: hsl(170, 8%, 81%);
+  --color-simple-line: hsl(var(--color-chief-hue), 8%, 81%);
   --color-bg-95: color-mix(in oklch, var(--color-heavy) 5%, rgba(255,255,255,.8));
+  --color-bg-90: color-mix(in oklch, var(--color-heavy) 10%, rgba(255,255,255,.8));
   --color-bg-80: color-mix(in oklch, var(--color-heavy) 20%, rgba(255,255,255,.8));
   --color-shadow-base:color-mix(in oklch, var(--color-heavy) 62%, white);
   --color-border-heavy: color-mix(in oklch, var(--color-shadow-base) 90%, transparent);
@@ -746,7 +749,7 @@ input[type="url"],
 input[type="search"],
 textarea {
   color: #2f3540;
-  background: color-mix(in oklch, var(--color-bg-95) 25%, hsl(170, 12%, 95%));
+  background: color-mix(in oklch, var(--color-bg-95) 25%, var(--color-main-bg));
   border: 2px solid var(--color-simple-line);
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -1654,7 +1657,7 @@ a.prev.page-numbers:hover {
   border-radius: 5px;
 }
 .page .site-main .page {
-  background-color: var(--color-bg-80);
+  background-color: var(--color-bg-90);
   border: 2px solid var(--color-border-heavy);
   border-radius: 5px;
 }
@@ -1940,7 +1943,7 @@ h2.related-post-title {
 }
 
 .piced-link-window {
-  background: color-mix(in oklab, hsl(170, 12%, 95%) 85%, transparent);
+  background: color-mix(in oklab, var(--color-main-bg) 85%, transparent);
   border: 2px solid var(--color-border-heavy);
   border-radius: 5px;
   width: 96%;
