@@ -5,7 +5,7 @@ Theme URI: //pewae.com
 Author: 大致
 Author URI: //pewae.com
 Description: sketchy基于wordpress官方主题修改。本主题追求简单快捷舒适，仅适用于中文用户。
-Version: 8.6
+Version: 8.7
 GitHub Theme URI: lifishake/sketchy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -750,7 +750,7 @@ input[type="search"],
 textarea {
   color: #2f3540;
   background: color-mix(in oklch, var(--color-bg-95) 25%, var(--color-main-bg));
-  border: 2px solid var(--color-simple-line);
+  border: 1px solid var(--color-simple-line);
   -webkit-border-radius: 3px;
   border-radius: 3px;
   display: block;
@@ -990,10 +990,10 @@ a .nav-title,
 --------------------------------------------------------------*/
 
 .navigation-top {
-  border-bottom: 2px solid var(--color-border-heavy);
-  border-top: 1px solid var(--color-border-60);
-  border-left: 2px solid var(--color-border-heavy);
-  border-right: 2px solid var(--color-border-heavy);
+  border-bottom: 2px solid var(--color-border-35);
+  border-top: 1px solid var(--color-border-35);
+  border-left: 2px solid var(--color-border-35);
+  border-right: 2px solid var(--color-border-35);
   border-radius: 0 0 5px 5px;
   font-size: var(--🔍-px-0);
   font-size: var(--🔍-rem-0);
@@ -1084,7 +1084,7 @@ a .nav-title,
 
 .main-navigation.toggled-on,
 .bg-alpha {
-  background: var(--color-simple-line) repeat;
+  background: var(--color-main-bg) repeat;
   background-size: cover;
 }
 
@@ -1254,10 +1254,8 @@ html {
   padding: 1em;
   position: relative;
   z-index: 3;
-  border-left: 2px solid var(--color-border-heavy);
-  border-right: 2px solid var(--color-border-heavy);
-  border-bottom: 2px solid var(--color-border-heavy);
-  border-radius: 5px;
+  border-left: 2px solid var(--color-border-35);
+  border-right: 2px solid var(--color-border-35);
 }
 
 .site-branding a {
@@ -1493,6 +1491,7 @@ body.page .entry-title {
 
 .entry-header .entry-title {
   margin-bottom: 0.25em;
+  display:inline-block;
 }
 
 .entry-title a {
@@ -1651,14 +1650,14 @@ a.prev.page-numbers:hover {
 .single .site-main .post,
 .blog .site-main .post {
   background-color: var(--color-bg-95);
-  border: 2px solid var(--color-border-heavy);
+  border: 2px solid var(--color-border-35);
   padding: 15px 2em;
   margin: 15px 0 0 0;
   border-radius: 5px;
 }
 .page .site-main .page {
   background-color: var(--color-bg-90);
-  border: 2px solid var(--color-border-heavy);
+  border: 2px solid var(--color-border-35);
   border-radius: 5px;
 }
 
@@ -3494,12 +3493,12 @@ object {
 @media screen and (min-width: 48em) {
   .main-navigation li li:hover,
   .main-navigation li li.focus {
-    background: #f1f3f4;
+    background: var(--color-main-bg);
   }
 
   .main-navigation ul ul {
     border-color: var(--color-simple-line);
-    background: #f1f3f4;
+    background: var(--color-main-bg);
   }
 
   .main-navigation ul li.menu-item-has-children:before,
@@ -3509,7 +3508,7 @@ object {
 
   .main-navigation ul li.menu-item-has-children:after,
   .main-navigation ul li.page_item_has_children:after {
-    border-bottom-color: #f1f3f4;
+    border-bottom-color: var(--color-main-bg);
   }
 
   .main-navigation li li.focus > a,
