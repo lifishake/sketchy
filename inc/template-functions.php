@@ -143,7 +143,7 @@ function  sketchy_add_single_inline_css()
 	foreach ($got_ids as $id) {
 		$picid = get_post_thumbnail_id($id);
 		$maincolor = get_post_meta($picid, "apip_main_color", true);
-		if (false !== $maincolor) {
+		if ($maincolor) {
 			$rgb = hex2rgb($maincolor);
 			$hue = rgb2hsv($rgb)[0];
 			$calc_color = sprintf("color-mix(in oklch, hsl(%s, 25%%, 55%%) 48%%, white)", $hue);

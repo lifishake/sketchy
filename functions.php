@@ -151,7 +151,7 @@ function sketchy_scripts()
 	if (has_post_thumbnail() && is_singular()) {
 		$picid = get_post_thumbnail_id();
 		$maincolor = get_post_meta($picid, "apip_main_color", true);
-		if (false !== $maincolor) {
+		if ($maincolor) {
 			$rgb = hex2rgb($maincolor);
 			$hue = rgb2hsv($rgb)[0];
 			$css .= sprintf(":root {--color-chief-hue:%d;}", $hue);
