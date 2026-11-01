@@ -1707,7 +1707,7 @@ body .entry-header {
   position: relative;
   font-family: var(--🖊-title);
   padding: 0.05em 1.3em 0.05em 1.7em;
-  box-shadow: inset 0 -0.6em 0 rgba(73, 84, 100, 0.55); /*495464*/
+  box-shadow: inset 0 -0.6em 0 var(--color-simple-line); /*495464*/
 }
 
 .entry-content h3,
@@ -2010,7 +2010,7 @@ h2.related-post-title {
 --------------------------------------------------------------*/
 
 .page-header {
-  padding-bottom: 2em;
+  padding-bottom: 0.5em;
 }
 
 .page .entry-header .edit-link {
@@ -2113,8 +2113,8 @@ h2.related-post-title {
 .social-navigation a {
   -webkit-border-radius: 40px;
   border-radius: 40px;
-  background-color: var(--color-simple-line);
-  color: #ffffff;
+  background-color: var(--color-heavy);
+  color: var(--color-bg-95);
   display: inline-block;
   height: 40px;
   margin: 0 1em 0.5em 0;
@@ -2901,6 +2901,7 @@ object {
     /*background-color: rgba(245,248,240,.95);*/
     display: block;
   }
+
 }
 
 /*480*/
@@ -3017,6 +3018,9 @@ object {
     font-size: var(--🔍-rem--2);
   }
 
+  .page-header {
+    padding-bottom: 2em;
+  }
   /* Layout */
 
   .wrap {
