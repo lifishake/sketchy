@@ -1,24 +1,16 @@
 <?php
 /**
- * Twenty Seventeen functions and definitions
+ * Sketchy functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
  * @subpackage sketchy
  * @since 1.0
+ * @version 9.0 删除了已经改名的引用文件
  */
 
-
-/**
- * Twenty Seventeen only works in WordPress 4.7 or later.
- */
-if (version_compare($GLOBALS['wp_version'], '4.7-alpha', '<')) {
-	require get_template_directory() . '/inc/back-compat.php';
-	return;
-}
-
-define('SKETCHY_VER', '20261031');
+define('SKETCHY_VER', '20261101');
 
 function sketchy_setup()
 {
@@ -191,6 +183,10 @@ function sketchy_scripts()
 add_action('wp_enqueue_scripts', 'sketchy_scripts');
 
 //配合apip动态修改chrome浏览器标签颜色
+/**
+ * Summary of sketchy_chrome_tab_color_change
+ * @param mixed $input
+ */
 function sketchy_chrome_tab_color_change($input)
 {
 	if (has_post_thumbnail() && is_singular()) {
@@ -204,6 +200,11 @@ function sketchy_chrome_tab_color_change($input)
 }
 add_filter('apip_tab_color', 'sketchy_chrome_tab_color_change');
 
+/**
+ * Summary of sketchy_content_image_sizes_attr
+ * @param mixed $sizes
+ * @param mixed $size
+ */
 function sketchy_content_image_sizes_attr($sizes, $size)
 {
 	$width = $size[0];
@@ -223,16 +224,26 @@ function sketchy_content_image_sizes_attr($sizes, $size)
 add_filter('wp_calculate_image_sizes', 'sketchy_content_image_sizes_attr', 10, 2);
 
 //https://stackoverflow.com/questions/31822842/adding-search-bar-to-the-nav-menu-in-wordpress
+/**
+ * Summary of sketchy_add_search_to_menu
+ * @param mixed $items
+ * @param mixed $args
+ */
 function sketchy_add_search_to_menu($items, $args)
 {
 	// If this isn't the primary menu, do nothing
 	if (!($args->theme_location == 'top'))
 		return $items;
 	// Otherwise, add search form
-	return $items . '<li>' . get_search_form(false) . '</li>';
+	return $items . '<li>' . get_search_form(['echo'=>false]) . '</li>';
 }
 //add_filter('wp_nav_menu_items', 'sketchy_add_search_to_menu', 10, 2);
-
+/**
+ * Summary of sketchy_header_image_tag
+ * @param mixed $html
+ * @param mixed $header
+ * @param mixed $attr
+ */
 function sketchy_header_image_tag($html, $header, $attr)
 {
 	if (isset($attr['sizes'])) {
@@ -242,6 +253,11 @@ function sketchy_header_image_tag($html, $header, $attr)
 }
 add_filter('get_header_image_tag', 'sketchy_header_image_tag', 10, 3);
 
+/**
+ * Summary of sketchy_background_color
+ * @param mixed $refcolor
+ * @return string
+ */
 function sketchy_background_color($refcolor)
 {
 	$rgbref = hex2rgb($refcolor);
@@ -253,6 +269,12 @@ function sketchy_background_color($refcolor)
 	return $str;
 }
 
+/**
+ * Summary of sketchy_mask_color
+ * @param mixed $refcolor
+ * @param mixed $a
+ * @return string
+ */
 function sketchy_mask_color($refcolor, $a = 0.85)
 {
 	$rgbref = hex2rgb($refcolor);
@@ -281,6 +303,11 @@ function sketchy_mask_color($refcolor, $a = 0.85)
 /**
  * 作用: 获得昵称的第一个汉字或者前两个英文字符
  * 来源: 自创
+ */
+/**
+ * Summary of sketchy_get_ziface
+ * @param mixed $comment
+ * @return string
  */
 function sketchy_get_ziface($comment)
 {
@@ -347,6 +374,7 @@ function sketchy_get_ziface($comment)
 /**
  * 作用: HEX描述的颜色值转成RGBA描述(A作为另外的参数)
  * 来源: Oblique原版
+ * @param mixed $color
  */
 function hex2rgba_str($color, $opacity = 1.0)
 {
@@ -366,6 +394,11 @@ function hex2rgba_str($color, $opacity = 1.0)
  * 来源: Oblique原版
  */
 if (!function_exists('hex2rgb')) {
+	/**
+	 * Summary of hex2rgb
+	 * @param mixed $color
+	 * @return array<float|int>
+	 */
 	function hex2rgb($color)
 	{
 		if ($color[0] == '#') {
@@ -454,6 +487,7 @@ if (!function_exists('hsv2rgb')) {
 				break;
 			case 5:
 			case 6: //for when $H=1 is given
+			default:
 				list($R, $G, $B) = array($V, $M, $N);
 				break;
 		}
@@ -489,7 +523,3 @@ require get_parent_theme_file_path('/inc/icon-functions.php');
  * AJAX-comment
  */
 require get_parent_theme_file_path('/inc/ajax-comment.php');
-
-if (file_exists(dirname(__FILE__) . '/inc/pewae-private.php')) {
-	require get_parent_theme_file_path('/inc/pewae-private.php');
-}
