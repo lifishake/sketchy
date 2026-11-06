@@ -7,10 +7,10 @@
  * @package WordPress
  * @subpackage sketchy
  * @since 1.0
- * @version 9.0 删除了已经改名的引用文件
+ * @version 9.1 删除了已经改名的引用文件
  */
 
-define('SKETCHY_VER', '20261101');
+define('SKETCHY_VER', '20261102');
 
 function sketchy_setup()
 {
